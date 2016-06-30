@@ -1,0 +1,3165 @@
+Library {
+  Name			  "uavsimBlockset_ZagiUAS"
+  Version		  8.4
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [344.0, 0.0, 1576.0, 1048.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1532.0, 880.0]
+	ZoomFactor		[2.5]
+	Offset			[1249.2186466726116, 64.84362264426926]
+      }
+    }
+  }
+  Created		  "Wed Feb 05 19:51:16 2014"
+  Creator		  "mstolle"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "j.bolting"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Feb 23 16:38:25 2015"
+  RTWModifiedTimeStamp	  346610296
+  ModelVersionFormat	  "1.%<AutoIncrement:1223>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  CovEnableCumulative	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  CovSFcnEnable		  off
+  CovBoundaryAbsTol	  0.000010
+  CovBoundaryRelTol	  0.010000
+  CovUseTimeInterval	  off
+  CovStartTime		  0
+  CovStopTime		  0
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      6
+      Version		      "1.14.3"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  7
+	  Version		  "1.14.3"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  8
+	  Version		  "1.14.3"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  9
+	  Version		  "1.14.3"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseDivisionForNetSlopeComputation "Off"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  10
+	  Version		  "1.14.3"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "EnableAllAsError"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  IntegerSaturationMsg	  "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  11
+	  Version		  "1.14.3"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  12
+	  Version		  "1.14.3"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  13
+	  Version		  "1.14.3"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  14
+	  Version		  "1.14.3"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    15
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  ""
+	  ConfigurationScript	  ""
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      15
+	      Version		      "1.14.3"
+	      Array {
+		Type			"Cell"
+		Dimension		22
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      16
+	      Version		      "1.14.3"
+	      Array {
+		Type			"Cell"
+		Dimension		14
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"SupportContinuousTime"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      GenerateSharedConstants on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 400, 210, 1280, 840 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      Inputs		      "4"
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+      InheritFromInputs	      on
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputSignals	      "signal1,signal2,signal3"
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Ground
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      ManualSwitch
+      CurrentSetting	      "1"
+      varsize		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
+      SampleTime	      "-1"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "1"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "uavsimBlockset_ZagiUAS"
+    Location		    [344, 0, 1920, 1048]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "250"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "4693"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Zagi UAS"
+      SID		      "3696"
+      Ports		      [3, 3]
+      Position		      [1420, 142, 1735, 298]
+      ZOrder		      1165
+      LibraryVersion	      "*1.1222"
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		17
+	$ClassName		"Simulink.Mask"
+	Display			"image(imread('images/zagi_slope.png'),[.3, .3, .4, .4])"
+	IconOpaque		"off"
+	IconUnits		"normalized"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  6
+	  Object {
+	    $ObjectID		    18
+	    Type		    "edit"
+	    Name		    "mask_zagi_phithetapsi0"
+	    Prompt		    "Initial euler angles [rad]"
+	    Value		    "aircraftmask_phithetapsi0"
+	  }
+	  Object {
+	    $ObjectID		    19
+	    Type		    "edit"
+	    Name		    "mask_zagi_p0_ECEF_lla"
+	    Prompt		    "Initial position ECEF [rad rad m]"
+	    Value		    "fflib_degdegm2rrm(flat2lla(aircraftmask_p0_NED_m, rad2deg(aircraftmask_originNED_ECEF_rrm(1:2)), 0, a"
+	    "ircraftmask_originNED_ECEF_rrm(3)))"
+	  }
+	  Object {
+	    $ObjectID		    20
+	    Type		    "edit"
+	    Name		    "mask_zagi_originNED_ECEF_rrm"
+	    Prompt		    "Origin NED frame, ECEF-WGS84, [rad rad m]"
+	    Value		    "aircraftmask_originNED_ECEF_rrm"
+	  }
+	  Object {
+	    $ObjectID		    21
+	    Type		    "edit"
+	    Name		    "mask_zagi_pqr0"
+	    Prompt		    "Initial body rotation rates [rad/s]"
+	    Value		    "aircraftmask_pqr0"
+	  }
+	  Object {
+	    $ObjectID		    22
+	    Type		    "edit"
+	    Name		    "mask_zagi_uvw0"
+	    Prompt		    "Initial velocity body frame [m/s]"
+	    Value		    "aircraftmask_uvw0"
+	  }
+	  Object {
+	    $ObjectID		    23
+	    Type		    "edit"
+	    Name		    "uavsim"
+	    Prompt		    "Parameter set"
+	    Value		    "uavsim"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Zagi UAS"
+	Location		[0, 0, 1594, 1048]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"175"
+	Block {
+	  BlockType		  Inport
+	  Name			  "u - system inputs"
+	  SID			  "3822"
+	  Position		  [140, 168, 170, 182]
+	  ZOrder		  1163
+	  IconDisplay		  "Port number"
+	  OutDataTypeStr	  "Bus: CMD"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Environment"
+	  SID			  "4016"
+	  Position		  [140, 248, 170, 262]
+	  ZOrder		  1183
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  OutDataTypeStr	  "Bus: Environment"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "External forces \nand moments"
+	  SID			  "4432"
+	  Position		  [140, 328, 170, 342]
+	  ZOrder		  1192
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Linear aircraft model"
+	  SID			  "4581"
+	  Ports			  [2, 1]
+	  Position		  [620, 418, 780, 667]
+	  ZOrder		  1246
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    24
+	    $ClassName		    "Simulink.Mask"
+	    Array {
+	      Type		      "Simulink.MaskParameter"
+	      Dimension		      4
+	      Object {
+		$ObjectID		25
+		Type			"edit"
+		Name			"mask_ssm"
+		Prompt			"State space model"
+		Value			"uavsim.zagi.linearModels.eulers.ss_full"
+	      }
+	      Object {
+		$ObjectID		26
+		Type			"edit"
+		Name			"mask_xtrim"
+		Prompt			"x trim"
+		Value			"uavsim.zagi.x_trim"
+	      }
+	      Object {
+		$ObjectID		27
+		Type			"edit"
+		Name			"mask_utrim"
+		Prompt			"u trim"
+		Value			"uavsim.zagi.u_trim"
+	      }
+	      Object {
+		$ObjectID		28
+		Type			"edit"
+		Name			"mask_ytrim"
+		Prompt			"y trim"
+		Value			"uavsim.zagi.u_trim"
+	      }
+	      PropName		      "Parameters"
+	    }
+	  }
+	  System {
+	    Name		    "Linear aircraft model"
+	    Location		    [-4, -4, 1924, 1052]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "125"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CMD"
+	      SID		      "4582"
+	      Position		      [20, 303, 50, 317]
+	      ZOrder		      1245
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "Bus: CMD"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "EnvData"
+	      SID		      "4583"
+	      Position		      [20, 113, 50, 127]
+	      ZOrder		      1246
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Add \ntrim offset"
+	      SID		      "4634"
+	      Ports		      [2, 1]
+	      Position		      [600, 302, 630, 333]
+	      ZOrder		      1509
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Altitude offset\ngeoid - NED"
+	      SID		      "4614"
+	      Position		      [910, 114, 950, 126]
+	      ZOrder		      1499
+	      Value		      "mask_zagi_originNED_ECEF_rrm(3)"
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector1"
+	      SID		      "4636"
+	      Ports		      [1, 5]
+	      Position		      [85, 246, 105, 374]
+	      ZOrder		      1511
+	      ShowName		      off
+	      OutputSignals	      "da_rad,de_rad,dr_rad,den_0to1,df_rad"
+	      Port {
+		PortNumber		1
+		Name			"<da_rad>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<de_rad>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<dr_rad>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<den_0to1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<df_rad>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus Creator"
+	      SID		      "4610"
+	      Ports		      [7, 1]
+	      Position		      [1400, 764, 1470, 1136]
+	      ZOrder		      1259
+	      ShowName		      off
+	      Inputs		      "7"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"Aero"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus Selector2"
+	      SID		      "4684"
+	      Ports		      [1, 2]
+	      Position		      [755, 1042, 790, 1078]
+	      ZOrder		      1544
+	      ShowName		      off
+	      OutputSignals	      "a_mps,rho_kgm3"
+	      Port {
+		PortNumber		1
+		Name			"<a_mps>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<rho_kgm3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus Selector3"
+	      SID		      "4589"
+	      Ports		      [1, 1]
+	      Position		      [1200, 207, 1235, 243]
+	      ZOrder		      1168
+	      ShowName		      off
+	      OutputSignals	      "groundlevel_NED_m"
+	      Port {
+		PortNumber		1
+		Name			"<groundlevel_NED_m>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "4635"
+	      Position		      [400, 385, 540, 425]
+	      ZOrder		      1510
+	      ShowName		      off
+	      Value		      "uavsim.zagi.y_trim(13:end)"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      SID		      "4639"
+	      Position		      [45, 397, 185, 443]
+	      ZOrder		      1514
+	      ShowName		      off
+	      Value		      "mask_utrim(1:5)"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      SID		      "4611"
+	      Position		      [1260, 880, 1335, 910]
+	      ZOrder		      1257
+	      ShowName		      off
+	      Value		      "0"
+	      Port {
+		PortNumber		1
+		Name			"alphaDot_rps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant3"
+	      SID		      "4612"
+	      Position		      [1260, 935, 1335, 965]
+	      ZOrder		      1258
+	      ShowName		      off
+	      Value		      "0"
+	      Port {
+		PortNumber		1
+		Name			"betaDot_rps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      SID		      "4640"
+	      Ports		      [1, 18]
+	      Position		      [670, 45, 695, 595]
+	      ZOrder		      1515
+	      ShowName		      off
+	      Outputs		      "18"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"Va_mps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"alpha_rad"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"beta_rad"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"phi_rad"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"theta_rad"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"psi_rad"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"x_NED_m"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"y_NED_m"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"z_NED_m"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		10
+		Name			"p_rps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"q_rps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		12
+		Name			"r_rps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		13
+		Name			"n_z"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		14
+		Name			"vx_NED_mps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		15
+		Name			"vy_NED_mps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		16
+		Name			"vz_NED_mps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		17
+		Name			"gamma_rad"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		18
+		Name			"chi_rad"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Flat Earth to LLA"
+	      SID		      "4648"
+	      Ports		      [2, 2]
+	      Position		      [990, 83, 1055, 132]
+	      ZOrder		      1523
+	      LibraryVersion	      "1.389"
+	      SourceBlock	      "aerolibtransform2/Flat Earth to LLA"
+	      SourceType	      "Flat Earth to LLA"
+	      ContentPreviewEnabled   off
+	      units		      "Metric (MKS)"
+	      ptype		      "Earth (WGS84)"
+	      F			      "1/298.257223563"
+	      R			      "6378137"
+	      LL0		      "rad2deg(mask_zagi_originNED_ECEF_rrm(1:2))"
+	      psi		      "0"
+	    }
+	    Block {
+	      BlockType		      Selector
+	      Name		      "Get omegaDot"
+	      SID		      "4680"
+	      Ports		      [1, 1]
+	      Position		      [660, 631, 700, 669]
+	      ZOrder		      1540
+	      InputPortWidth	      "12"
+	      Indices		      "10:12"
+	      Port {
+		PortNumber		1
+		Name			"omegaDot_b_rps2"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground"
+	      SID		      "4691"
+	      Position		      [1400, 580, 1420, 600]
+	      ZOrder		      1551
+	      Port {
+		PortNumber		1
+		Name			"VgroundDot_bfrozen_mps2"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Ground
+	      Name		      "Ground1"
+	      SID		      "4692"
+	      Position		      [1215, 295, 1235, 315]
+	      ZOrder		      1552
+	      Port {
+		PortNumber		1
+		Name			"Vground_ECEF_mps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "LLA to ECEF Position"
+	      SID		      "4651"
+	      Ports		      [2, 1]
+	      Position		      [1085, 138, 1130, 187]
+	      ZOrder		      1526
+	      LibraryVersion	      "1.389"
+	      SourceBlock	      "aerolibtransform2/LLA to ECEF Position"
+	      SourceType	      "LLA to ECEF"
+	      ContentPreviewEnabled   off
+	      units		      "Metric (MKS)"
+	      ptype		      "Earth (WGS84)"
+	      F			      "1/298.257223563"
+	      R			      "6378137"
+	      Port {
+		PortNumber		1
+		Name			"P_ECEF_m"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Mach Number"
+	      SID		      "4683"
+	      Ports		      [2, 1]
+	      Position		      [910, 1014, 1030, 1076]
+	      ZOrder		      1543
+	      LibraryVersion	      "1.133"
+	      SourceBlock	      "aerolibasang/Mach Number"
+	      SourceType	      "Mach Number"
+	      ContentPreviewEnabled   off
+	      Port {
+		PortNumber		1
+		Name			"Ma"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus1"
+	      SID		      "4620"
+	      Ports		      [4, 1]
+	      Position		      [1585, 169, 1590, 241]
+	      ZOrder		      1488
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: Position"
+	      Port {
+		PortNumber		1
+		Name			"Position"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus2"
+	      SID		      "4621"
+	      Ports		      [3, 1]
+	      Position		      [1585, 255, 1590, 345]
+	      ZOrder		      1489
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: Velocity"
+	      Port {
+		PortNumber		1
+		Name			"Velocity"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus3"
+	      SID		      "4622"
+	      Ports		      [1, 1]
+	      Position		      [1585, 461, 1590, 499]
+	      ZOrder		      1492
+	      ShowName		      off
+	      Inputs		      "1"
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: RotationalVelocity"
+	      Port {
+		PortNumber		1
+		Name			"RotationalVelocity"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus4"
+	      SID		      "4623"
+	      Ports		      [1, 1]
+	      Position		      [1585, 571, 1590, 609]
+	      ZOrder		      1494
+	      ShowName		      off
+	      Inputs		      "1"
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: Acceleration"
+	      Port {
+		PortNumber		1
+		Name			"Acceleration"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus5"
+	      SID		      "4624"
+	      Ports		      [1, 1]
+	      Position		      [1585, 521, 1590, 559]
+	      ZOrder		      1495
+	      ShowName		      off
+	      Inputs		      "1"
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: RotationalAcceleration"
+	      Port {
+		PortNumber		1
+		Name			"RotationalAcceleration"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus6"
+	      SID		      "4594"
+	      Ports		      [2, 1]
+	      Position		      [1675, 773, 1680, 957]
+	      ZOrder		      1166
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: Airframe"
+	      NonVirtualBus	      on
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus7"
+	      SID		      "4625"
+	      Ports		      [6, 1]
+	      Position		      [1775, 213, 1780, 482]
+	      ZOrder		      1490
+	      ShowName		      off
+	      Inputs		      "6"
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: Kinematics"
+	      NonVirtualBus	      on
+	      Port {
+		PortNumber		1
+		Name			"Kinematics"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus8"
+	      SID		      "4626"
+	      Ports		      [2, 1]
+	      Position		      [1585, 352, 1590, 448]
+	      ZOrder		      1491
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: Attitude"
+	      Port {
+		PortNumber		1
+		Name			"Attitude"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      SID		      "4637"
+	      Ports		      [5, 1]
+	      Position		      [170, 245, 185, 375]
+	      ZOrder		      1512
+	      ShowName		      off
+	      Inputs		      "5"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux1"
+	      SID		      "4642"
+	      Ports		      [2, 1]
+	      Position		      [400, 291, 405, 329]
+	      ZOrder		      1517
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux2"
+	      SID		      "4644"
+	      Ports		      [3, 1]
+	      Position		      [765, 230, 780, 320]
+	      ZOrder		      1519
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"P_NED_m"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux3"
+	      SID		      "4645"
+	      Ports		      [3, 1]
+	      Position		      [790, 320, 805, 410]
+	      ZOrder		      1520
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"omega_b_rps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux4"
+	      SID		      "4646"
+	      Ports		      [3, 1]
+	      Position		      [790, 440, 805, 530]
+	      ZOrder		      1521
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"Vground_NED_mps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux5"
+	      SID		      "4647"
+	      Ports		      [3, 1]
+	      Position		      [815, 130, 830, 220]
+	      ZOrder		      1522
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"euler_rad"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux6"
+	      SID		      "4649"
+	      Ports		      [2, 1]
+	      Position		      [1085, 86, 1090, 124]
+	      ZOrder		      1524
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"P_LLA_deg_m"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Remove \ntrim offset"
+	      SID		      "4638"
+	      Ports		      [2, 1]
+	      Position		      [240, 302, 270, 333]
+	      ZOrder		      1513
+	      Inputs		      "+-"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Rotation Angles to\nDirection Cosine Matrix"
+	      SID		      "4652"
+	      Ports		      [1, 1]
+	      Position		      [1055, 309, 1155, 351]
+	      ZOrder		      1527
+	      AttributesFormatString  "Rotation Order: %<rotationOrder>"
+	      LibraryVersion	      "1.389"
+	      SourceBlock	      "aerolibtransform2/Rotation Angles to\nDirection Cosine Matrix"
+	      SourceType	      "Ang2DCM"
+	      ContentPreviewEnabled   off
+	      rotationOrder	      "ZYX"
+	      Port {
+		PortNumber		1
+		Name			"DCM_be"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "State Space System1"
+	      SID		      "4677"
+	      Ports		      [1, 3]
+	      Position		      [465, 284, 525, 336]
+	      ZOrder		      1538
+	      LibraryVersion	      "1.1145"
+	      SourceBlock	      "uavsimBlockset_StateSpaceSystem/State Space System"
+	      SourceType	      ""
+	      ContentPreviewEnabled   off
+	      mask_a		      "mask_ssm.a"
+	      mask_b		      "mask_ssm.b"
+	      mask_c		      "mask_ssm.c"
+	      mask_d		      "mask_ssm.d"
+	      mask_x0		      "mask_xtrim"
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "4685"
+	      Position		      [840, 415, 860, 435]
+	      ZOrder		      1545
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator1"
+	      SID		      "4686"
+	      Position		      [840, 540, 860, 560]
+	      ZOrder		      1546
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator2"
+	      SID		      "4687"
+	      Position		      [800, 565, 820, 585]
+	      ZOrder		      1547
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "agl"
+	      SID		      "4630"
+	      Ports		      [2, 1]
+	      Position		      [1355, 216, 1425, 254]
+	      ZOrder		      1503
+	      LibraryVersion	      "1.1171"
+	      SourceBlock	      "uavsimblockset_SixDOFKinematics/Aircraft kinematics/agl"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	      Port {
+		PortNumber		1
+		Name			"Altitude_AGL_m"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "airspeed to\ndynamic pressure"
+	      SID		      "4682"
+	      Ports		      [2, 1]
+	      Position		      [1055, 1097, 1135, 1133]
+	      ZOrder		      1542
+	      LibraryVersion	      "1.668"
+	      SourceBlock	      "formationFlyingBlockset/airspeed to\ndynamic pressure"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	      Port {
+		PortNumber		1
+		Name			"qbar_Pa"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "turbulence\ninputs"
+	      SID		      "4643"
+	      Position		      [220, 447, 290, 483]
+	      ZOrder		      1518
+	      Value		      "zeros(6,1)"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "turbulence\ninputs1"
+	      SID		      "4693"
+	      Position		      [290, 202, 360, 238]
+	      ZOrder		      1553
+	      Value		      "zeros(11,1)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "v_NED to v_body_frozen"
+	      SID		      "4689"
+	      Ports		      [2, 1]
+	      Position		      [1115, 651, 1255, 709]
+	      ZOrder		      1549
+	      LibraryVersion	      "1.668"
+	      SourceBlock	      "formationFlyingBlockset/v_NED to v_body_frozen"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	      Port {
+		PortNumber		1
+		Name			"Vground_bfrozen_mps"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Airframe"
+	      SID		      "4596"
+	      Position		      [2120, 843, 2150, 857]
+	      ZOrder		      1248
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "turbulence\ninputs1"
+	      SrcPort		      1
+	      Points		      [80, 0; 0, 90]
+	      DstBlock		      "State Space System1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<rho_kgm3>"
+	      ZOrder		      2
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector2"
+	      SrcPort		      2
+	      Points		      [85, 0; 0, 55]
+	      DstBlock		      "airspeed to\ndynamic pressure"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<a_mps>"
+	      ZOrder		      3
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector2"
+	      SrcPort		      1
+	      Points		      [55, 0; 0, 10]
+	      DstBlock		      "Mach Number"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "State Space System1"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 355]
+	      DstBlock		      "Get omegaDot"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "EnvData"
+	      SrcPort		      1
+	      Points		      [305, 0; 0, -89; 816, 0; 0, 194]
+	      Branch {
+		ZOrder			6
+		Points			[-432, 0; 0, 835]
+		DstBlock		"Bus Selector2"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			7
+		DstBlock		"Bus Selector3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "Flat Earth to LLA"
+	      SrcPort		      2
+	      Points		      [5, 0]
+	      Branch {
+		ZOrder			9
+		Points			[4, 0; 0, -5]
+		DstBlock		"Mux6"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			10
+		Points			[0, 55]
+		DstBlock		"LLA to ECEF Position"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "Flat Earth to LLA"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		ZOrder			12
+		DstBlock		"Mux6"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			13
+		Points			[0, 8; -7, 0; 0, 47]
+		DstBlock		"LLA to ECEF Position"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      14
+	      SrcBlock		      "turbulence\ninputs"
+	      SrcPort		      1
+	      Points		      [86, 0; 0, -145]
+	      DstBlock		      "Mux1"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      15
+	      SrcBlock		      "Mux1"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	    }
+	    Line {
+	      Name		      "chi_rad"
+	      ZOrder		      16
+	      Labels		      [1, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      18
+	      DstBlock		      "Terminator2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "gamma_rad"
+	      ZOrder		      17
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      17
+	      Points		      [125, 0]
+	      DstBlock		      "Terminator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "vz_NED_mps"
+	      ZOrder		      18
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      16
+	      DstBlock		      "Mux4"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "vy_NED_mps"
+	      ZOrder		      19
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      15
+	      DstBlock		      "Mux4"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "vx_NED_mps"
+	      ZOrder		      20
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      14
+	      DstBlock		      "Mux4"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "n_z"
+	      ZOrder		      21
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      13
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "r_rps"
+	      ZOrder		      22
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      12
+	      DstBlock		      "Mux3"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "q_rps"
+	      ZOrder		      23
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      11
+	      DstBlock		      "Mux3"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "p_rps"
+	      ZOrder		      24
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      10
+	      DstBlock		      "Mux3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "z_NED_m"
+	      ZOrder		      25
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      9
+	      DstBlock		      "Mux2"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "y_NED_m"
+	      ZOrder		      26
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      8
+	      DstBlock		      "Mux2"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "x_NED_m"
+	      ZOrder		      27
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      7
+	      DstBlock		      "Mux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "psi_rad"
+	      ZOrder		      28
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      6
+	      Points		      [55, 0; 0, -70]
+	      DstBlock		      "Mux5"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "theta_rad"
+	      ZOrder		      29
+	      Labels		      [1, 1]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      5
+	      Points		      [85, 0; 0, -10]
+	      DstBlock		      "Mux5"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "phi_rad"
+	      ZOrder		      30
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      4
+	      Points		      [70, 0; 0, 50]
+	      DstBlock		      "Mux5"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "beta_rad"
+	      ZOrder		      31
+	      Labels		      [0, 0; -1, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      3
+	      Points		      [21, 0; 0, 715]
+	      DstBlock		      "Bus Creator"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "alpha_rad"
+	      ZOrder		      32
+	      Labels		      [0, 0; -1, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      Points		      [32, 0; 0, 690]
+	      DstBlock		      "Bus Creator"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      33
+	      SrcBlock		      "Add \ntrim offset"
+	      SrcPort		      1
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      34
+	      SrcBlock		      "Remove \ntrim offset"
+	      SrcPort		      1
+	      Points		      [67, 0; 0, -20]
+	      DstBlock		      "Mux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      35
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [24, 0; 0, -95]
+	      DstBlock		      "Remove \ntrim offset"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      36
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Remove \ntrim offset"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<df_rad>"
+	      ZOrder		      37
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      5
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<den_0to1>"
+	      ZOrder		      38
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      4
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<da_rad>"
+	      ZOrder		      39
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<dr_rad>"
+	      ZOrder		      40
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      3
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<de_rad>"
+	      ZOrder		      41
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      2
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      42
+	      SrcBlock		      "CMD"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      43
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [16, 0; 0, -80]
+	      DstBlock		      "Add \ntrim offset"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      44
+	      SrcBlock		      "State Space System1"
+	      SrcPort		      2
+	      DstBlock		      "Add \ntrim offset"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "P_LLA_deg_m"
+	      ZOrder		      45
+	      SrcBlock		      "Mux6"
+	      SrcPort		      1
+	      Points		      [239, 0; 0, 140]
+	      Branch {
+		ZOrder			46
+		DstBlock		"agl"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			47
+		Labels			[-1, 0]
+		Points			[0, 105; 160, 0; 0, -115]
+		DstBlock		"ModelBus1"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      Name		      "VgroundDot_bfrozen_mps2"
+	      ZOrder		      48
+	      Labels		      [-1, 0]
+	      SrcBlock		      "Ground"
+	      SrcPort		      1
+	      DstBlock		      "ModelBus4"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "omegaDot_b_rps2"
+	      ZOrder		      49
+	      Labels		      [-1, 0]
+	      SrcBlock		      "Get omegaDot"
+	      SrcPort		      1
+	      Points		      [215, 0; 0, -110]
+	      DstBlock		      "ModelBus5"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Velocity"
+	      ZOrder		      50
+	      Labels		      [3, 1]
+	      SrcBlock		      "ModelBus2"
+	      SrcPort		      1
+	      Points		      [19, 0; 0, -20]
+	      DstBlock		      "ModelBus7"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "RotationalVelocity"
+	      ZOrder		      51
+	      Labels		      [3, 1]
+	      SrcBlock		      "ModelBus3"
+	      SrcPort		      1
+	      Points		      [53, 0; 0, -110]
+	      DstBlock		      "ModelBus7"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "P_ECEF_m"
+	      ZOrder		      52
+	      Labels		      [0, 1]
+	      SrcBlock		      "LLA to ECEF Position"
+	      SrcPort		      1
+	      Points		      [381, 0; 0, 50]
+	      DstBlock		      "ModelBus1"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "RotationalAcceleration"
+	      ZOrder		      53
+	      Labels		      [3, 1]
+	      SrcBlock		      "ModelBus5"
+	      SrcPort		      1
+	      Points		      [68, 0; 0, -125]
+	      DstBlock		      "ModelBus7"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "DCM_be"
+	      ZOrder		      54
+	      SrcBlock		      "Rotation Angles to\nDirection Cosine Matrix"
+	      SrcPort		      1
+	      Points		      [9, 0; 0, 80; 8, 0]
+	      Branch {
+		ZOrder			55
+		Labels			[1, 1]
+		Points			[200, 0; 0, 15]
+		DstBlock		"ModelBus8"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			56
+		Points			[0, 16; -123, 0; 0, 269]
+		DstBlock		"v_NED to v_body_frozen"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      Name		      "omega_b_rps"
+	      ZOrder		      57
+	      Labels		      [-1, 0]
+	      SrcBlock		      "Mux3"
+	      SrcPort		      1
+	      Points		      [79, 0; 0, 115]
+	      DstBlock		      "ModelBus3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Attitude"
+	      ZOrder		      58
+	      Labels		      [3, 1]
+	      SrcBlock		      "ModelBus8"
+	      SrcPort		      1
+	      Points		      [28, 0; 0, -75]
+	      DstBlock		      "ModelBus7"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "Altitude_AGL_m"
+	      ZOrder		      59
+	      Labels		      [0, 0]
+	      SrcBlock		      "agl"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, -40]
+	      DstBlock		      "ModelBus1"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "euler_rad"
+	      ZOrder		      60
+	      SrcBlock		      "Mux5"
+	      SrcPort		      1
+	      Points		      [138, 0; 0, 155]
+	      Branch {
+		ZOrder			61
+		Labels			[2, 1]
+		Points			[0, 45]
+		DstBlock		"ModelBus8"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			62
+		DstBlock		"Rotation Angles to\nDirection Cosine Matrix"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "P_NED_m"
+	      ZOrder		      63
+	      SrcBlock		      "Mux2"
+	      SrcPort		      1
+	      Points		      [11, 0]
+	      Branch {
+		ZOrder			64
+		Points			[4, 0; 0, -180]
+		DstBlock		"Flat Earth to LLA"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			65
+		Labels			[-1, 1]
+		Points			[0, -258; 766, 0; 0, 158]
+		DstBlock		"ModelBus1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "Position"
+	      ZOrder		      66
+	      Labels		      [3, 1]
+	      SrcBlock		      "ModelBus1"
+	      SrcPort		      1
+	      Points		      [87, 0; 0, 30]
+	      DstBlock		      "ModelBus7"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Vground_ECEF_mps"
+	      ZOrder		      67
+	      Labels		      [0, 0]
+	      SrcBlock		      "Ground1"
+	      SrcPort		      1
+	      Points		      [204, 0; 0, -35]
+	      DstBlock		      "ModelBus2"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Acceleration"
+	      ZOrder		      68
+	      Labels		      [3, 1]
+	      SrcBlock		      "ModelBus4"
+	      SrcPort		      1
+	      Points		      [88, 0; 0, -130]
+	      DstBlock		      "ModelBus7"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "Vground_bfrozen_mps"
+	      ZOrder		      69
+	      SrcBlock		      "v_NED to v_body_frozen"
+	      SrcPort		      1
+	      Points		      [34, 0]
+	      Branch {
+		ZOrder			70
+		Labels			[-1, 1]
+		Points			[36, 0; 0, -230; 209, 0; 0, -150]
+		DstBlock		"ModelBus2"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			71
+		Points			[0, 82; -398, 0; 0, 268]
+		DstBlock		"Mach Number"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "<groundlevel_NED_m>"
+	      ZOrder		      72
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector3"
+	      SrcPort		      1
+	      DstBlock		      "agl"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      73
+	      SrcBlock		      "Altitude offset\ngeoid - NED"
+	      SrcPort		      1
+	      DstBlock		      "Flat Earth to LLA"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "Vground_NED_mps"
+	      ZOrder		      74
+	      SrcBlock		      "Mux4"
+	      SrcPort		      1
+	      Points		      [208, 0; 0, 180]
+	      Branch {
+		ZOrder			75
+		DstBlock		"v_NED to v_body_frozen"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			76
+		Labels			[2, 1]
+		Points			[0, 71; 533, 0; 0, -386; 11, 0; 0, -20]
+		DstBlock		"ModelBus2"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      Name		      "alphaDot_rps"
+	      ZOrder		      77
+	      Labels		      [0, 0]
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      DstBlock		      "Bus Creator"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "betaDot_rps"
+	      ZOrder		      78
+	      Labels		      [0, 0]
+	      SrcBlock		      "Constant3"
+	      SrcPort		      1
+	      DstBlock		      "Bus Creator"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "Va_mps"
+	      ZOrder		      79
+	      Labels		      [0, 0]
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, 940; 335, 0]
+	      Branch {
+		ZOrder			80
+		DstBlock		"Bus Creator"
+		DstPort			5
+	      }
+	      Branch {
+		ZOrder			81
+		Points			[0, 100]
+		DstBlock		"airspeed to\ndynamic pressure"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "Ma"
+	      ZOrder		      82
+	      Labels		      [2, 1]
+	      SrcBlock		      "Mach Number"
+	      SrcPort		      1
+	      Points		      [170, 0; 0, 15]
+	      DstBlock		      "Bus Creator"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "qbar_Pa"
+	      ZOrder		      83
+	      Labels		      [1, 1]
+	      SrcBlock		      "airspeed to\ndynamic pressure"
+	      SrcPort		      1
+	      DstBlock		      "Bus Creator"
+	      DstPort		      7
+	    }
+	    Line {
+	      Name		      "Aero"
+	      ZOrder		      84
+	      Labels		      [-1, 0]
+	      SrcBlock		      "Bus Creator"
+	      SrcPort		      1
+	      Points		      [98, 0; 0, -40]
+	      DstBlock		      "ModelBus6"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      85
+	      SrcBlock		      "ModelBus6"
+	      SrcPort		      1
+	      Points		      [215, 0; 0, -15]
+	      DstBlock		      "Airframe"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Kinematics"
+	      ZOrder		      86
+	      Labels		      [-1, 0]
+	      SrcBlock		      "ModelBus7"
+	      SrcPort		      1
+	      Points		      [73, 0; 0, 388; -197, 0; 0, 52; -66, 0; 0, 30]
+	      DstBlock		      "ModelBus6"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  ManualSwitch
+	  Name			  "Manual Switch"
+	  SID			  "4598"
+	  Position		  [1090, 437, 1120, 473]
+	  ZOrder		  1247
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Nonlinear aircraft model"
+	  SID			  "4472"
+	  Ports			  [3, 2]
+	  Position		  [620, 132, 780, 378]
+	  ZOrder		  1245
+	  RequestExecContextInheritance	off
+	  System {
+	    Name		    "Nonlinear aircraft model"
+	    Location		    [0, 0, 1594, 1048]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "150"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CMD"
+	      SID		      "4473"
+	      Position		      [380, 193, 410, 207]
+	      ZOrder		      1245
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "EnvData"
+	      SID		      "4474"
+	      Position		      [20, 243, 50, 257]
+	      ZOrder		      1246
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "FM_external"
+	      SID		      "4475"
+	      Position		      [20, 473, 50, 487]
+	      ZOrder		      1247
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Aerodynamics"
+	      SID		      "4579"
+	      Ports		      [4, 3]
+	      Position		      [690, 178, 910, 397]
+	      ZOrder		      1256
+	      LibraryVersion	      "1.1224"
+	      SourceBlock	      "uavsimBlockset_Zagi_Aerandpropulsion/Zagi aerodynamics"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	      Port {
+		PortNumber		2
+		Name			"Aero"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus Selector"
+	      SID		      "4478"
+	      Ports		      [1, 1]
+	      Position		      [585, 21, 595, 39]
+	      ZOrder		      1252
+	      ShowName		      off
+	      OutputSignals	      "den_0to1"
+	      Port {
+		PortNumber		1
+		Name			"<den_0to1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus Selector1"
+	      SID		      "4479"
+	      Ports		      [1, 1]
+	      Position		      [585, 51, 595, 69]
+	      ZOrder		      1253
+	      ShowName		      off
+	      OutputSignals	      "rho_kgm3"
+	      Port {
+		PortNumber		1
+		Name			"<rho_kgm3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus Selector2"
+	      SID		      "3828"
+	      Ports		      [1, 2]
+	      Position		      [960, 85, 970, 160]
+	      ZOrder		      1164
+	      ShowName		      off
+	      OutputSignals	      "groundlevel_NED_m,glocal_ms2"
+	      Port {
+		PortNumber		1
+		Name			"<groundlevel_NED_m>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<glocal_ms2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus Selector3"
+	      SID		      "3829"
+	      Ports		      [1, 2]
+	      Position		      [550, 273, 555, 377]
+	      ZOrder		      1168
+	      ShowName		      off
+	      OutputSignals	      "RotationalVelocity.omega_b_rps,Velocity.Vground_bfrozen_mps"
+	      Port {
+		PortNumber		1
+		Name			"<omega_b_rps>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<Vground_bfrozen_mps>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus Selector4"
+	      SID		      "4480"
+	      Ports		      [1, 1]
+	      Position		      [585, 81, 595, 99]
+	      ZOrder		      1254
+	      ShowName		      off
+	      OutputSignals	      "Va_mps"
+	      Port {
+		PortNumber		1
+		Name			"<Va_mps>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Electric propulsion"
+	      SID		      "4481"
+	      Ports		      [3, 1]
+	      Position		      [720, 16, 830, 104]
+	      ZOrder		      1251
+	      LibraryVersion	      "1.1152"
+	      SourceBlock	      "uavsimBlockset_ElectricPropulsion/Electric propulsion"
+	      SourceType	      ""
+	      ContentPreviewEnabled   off
+	      mask_C_prop	      "uavsim.zagi.engine.C_prop"
+	      mask_S_prop	      "uavsim.zagi.engine.S_prop"
+	      mask_k_motor	      "uavsim.zagi.engine.k_motor"
+	    }
+	    Block {
+	      BlockType		      Memory
+	      Name		      "FIXME\nRemove \nalgebraic loop"
+	      SID		      "4470"
+	      Position		      [1305, 165, 1335, 195]
+	      ZOrder		      1244
+	      X0		      "1e-6"
+	      Port {
+		PortNumber		1
+		Name			"Kinematics"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Kinematics"
+	      SID		      "3840"
+	      Ports		      [4, 1]
+	      Position		      [1130, 82, 1280, 278]
+	      ZOrder		      1176
+	      LibraryVersion	      "1.1171"
+	      SourceBlock	      "uavsimblockset_SixDOFKinematics/Aircraft kinematics"
+	      SourceType	      ""
+	      ContentPreviewEnabled   off
+	      mask_inertia	      "uavsim.zagi.inertiaTensor"
+	      mask_mass		      "uavsim.zagi.mass"
+	      mask_P0_ECEF_rrm	      "mask_zagi_p0_ECEF_lla"
+	      mask_originNED_ECEF_rrm "mask_zagi_originNED_ECEF_rrm"
+	      mask_uvw0		      "mask_zagi_uvw0"
+	      mask_phithetapsi0	      "mask_zagi_phithetapsi0"
+	      mask_omega0	      "mask_zagi_pqr0"
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "ModelBus6"
+	      SID		      "3833"
+	      Ports		      [2, 1]
+	      Position		      [1460, 163, 1465, 347]
+	      ZOrder		      1166
+	      ShowName		      off
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	      OutDataTypeStr	      "Bus: Airframe"
+	      NonVirtualBus	      on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum up \nforces and moments of engine and\naircraft aerodynamics"
+	      SID		      "4428"
+	      Ports		      [2, 1]
+	      Position		      [990, 217, 1020, 248]
+	      ZOrder		      1188
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Airframe"
+	      SID		      "4476"
+	      Position		      [1680, 248, 1710, 262]
+	      ZOrder		      1248
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "Bus: Airframe"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Cwind"
+	      SID		      "4477"
+	      Position		      [1680, 368, 1710, 382]
+	      ZOrder		      1249
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      Name		      "Kinematics"
+	      ZOrder		      1
+	      SrcBlock		      "FIXME\nRemove \nalgebraic loop"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 30]
+	      Branch {
+		ZOrder			2
+		Labels			[1, 1]
+		DstBlock		"ModelBus6"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			3
+		Points			[0, 406; -1137, 0; 0, -291]
+		DstBlock		"Bus Selector3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      Name		      "<groundlevel_NED_m>"
+	      ZOrder		      4
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector2"
+	      SrcPort		      1
+	      DstBlock		      "Kinematics"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<glocal_ms2>"
+	      ZOrder		      5
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector2"
+	      SrcPort		      2
+	      Points		      [86, 0; 0, 115]
+	      DstBlock		      "Kinematics"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<omega_b_rps>"
+	      ZOrder		      6
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector3"
+	      SrcPort		      1
+	      Points		      [60, 0; 0, 15]
+	      DstBlock		      "Aerodynamics"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<Vground_bfrozen_mps>"
+	      ZOrder		      7
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector3"
+	      SrcPort		      2
+	      Points		      [60, 0; 0, 20]
+	      DstBlock		      "Aerodynamics"
+	      DstPort		      4
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "ModelBus6"
+	      SrcPort		      1
+	      DstBlock		      "Airframe"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "Aero"
+	      ZOrder		      9
+	      SrcBlock		      "Aerodynamics"
+	      SrcPort		      2
+	      Points		      [4, 0; 0, 10; 430, 0]
+	      Branch {
+		ZOrder			10
+		Labels			[1, 0]
+		Points			[0, 192; -813, 0; 0, -402]
+		DstBlock		"Bus Selector4"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			11
+		DstBlock		"ModelBus6"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "EnvData"
+	      SrcPort		      1
+	      Points		      [243, 0]
+	      Branch {
+		ZOrder			13
+		Points			[0, -190]
+		DstBlock		"Bus Selector1"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			14
+		Points			[349, 0]
+		Branch {
+		  ZOrder		  15
+		  Points		  [0, 10]
+		  DstBlock		  "Aerodynamics"
+		  DstPort		  2
+		}
+		Branch {
+		  ZOrder		  16
+		  Points		  [0, -125]
+		  DstBlock		  "Bus Selector2"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      ZOrder		      17
+	      SrcBlock		      "FM_external"
+	      SrcPort		      1
+	      Points		      [1049, 0; 0, -275]
+	      DstBlock		      "Kinematics"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      18
+	      SrcBlock		      "Aerodynamics"
+	      SrcPort		      3
+	      Points		      [68, 0; 0, 10]
+	      DstBlock		      "Cwind"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      19
+	      SrcBlock		      "Aerodynamics"
+	      SrcPort		      1
+	      Points		      [4, 0; 0, 25]
+	      DstBlock		      "Sum up \nforces and moments of engine and\naircraft aerodynamics"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      20
+	      SrcBlock		      "Sum up \nforces and moments of engine and\naircraft aerodynamics"
+	      SrcPort		      1
+	      Points		      [53, 0; 0, -80]
+	      DstBlock		      "Kinematics"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      21
+	      SrcBlock		      "Kinematics"
+	      SrcPort		      1
+	      DstBlock		      "FIXME\nRemove \nalgebraic loop"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<Va_mps>"
+	      ZOrder		      22
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector4"
+	      SrcPort		      1
+	      DstBlock		      "Electric propulsion"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<rho_kgm3>"
+	      ZOrder		      23
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector1"
+	      SrcPort		      1
+	      DstBlock		      "Electric propulsion"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<den_0to1>"
+	      ZOrder		      24
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus Selector"
+	      SrcPort		      1
+	      DstBlock		      "Electric propulsion"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      25
+	      SrcBlock		      "CMD"
+	      SrcPort		      1
+	      Points		      [50, 0]
+	      Branch {
+		ZOrder			26
+		Points			[0, 5]
+		DstBlock		"Aerodynamics"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			27
+		Points			[0, -170]
+		DstBlock		"Bus Selector"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      28
+	      SrcBlock		      "Electric propulsion"
+	      SrcPort		      1
+	      Points		      [103, 0; 0, 165]
+	      DstBlock		      "Sum up \nforces and moments of engine and\naircraft aerodynamics"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Zagi actuators - time behaviour"
+	  SID			  "4600"
+	  Ports			  [1, 1]
+	  Position		  [245, 146, 445, 204]
+	  ZOrder		  1470
+	  LibraryVersion	  "1.668"
+	  SourceBlock		  "formationFlyingBlockset/Zagi actuators - time behaviour"
+	  SourceType		  "SubSystem"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Airframe"
+	  SID			  "3835"
+	  Position		  [1220, 368, 1250, 382]
+	  ZOrder		  1162
+	  IconDisplay		  "Port number"
+	  OutDataTypeStr	  "Bus: Airframe"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "C_aero_w"
+	  SID			  "4430"
+	  Position		  [900, 313, 930, 327]
+	  ZOrder		  1190
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "effective commands"
+	  SID			  "4431"
+	  Position		  [1220, 83, 1250, 97]
+	  ZOrder		  1191
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  OutDataTypeStr	  "Bus: CMD"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Manual Switch"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, -80]
+	  DstBlock		  "Airframe"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Linear aircraft model"
+	  SrcPort		  1
+	  Points		  [150, 0; 0, -80]
+	  DstBlock		  "Manual Switch"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Nonlinear aircraft model"
+	  SrcPort		  1
+	  Points		  [176, 0; 0, 180; -8, 0; 0, 70]
+	  DstBlock		  "Manual Switch"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Zagi actuators - time behaviour"
+	  SrcPort		  1
+	  Points		  [101, 0]
+	  Branch {
+	    ZOrder		    5
+	    DstBlock		    "Nonlinear aircraft model"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    6
+	    Points		    [0, -85]
+	    DstBlock		    "effective commands"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    7
+	    Points		    [0, 305]
+	    DstBlock		    "Linear aircraft model"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "External forces \nand moments"
+	  SrcPort		  1
+	  DstBlock		  "Nonlinear aircraft model"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "Nonlinear aircraft model"
+	  SrcPort		  2
+	  DstBlock		  "C_aero_w"
+	  DstPort		  1
+	}
+	Line {
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  10
+	  SrcBlock		  "u - system inputs"
+	  SrcPort		  1
+	  DstBlock		  "Zagi actuators - time behaviour"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "Environment"
+	  SrcPort		  1
+	  Points		  [356, 0]
+	  Branch {
+	    ZOrder		    12
+	    DstBlock		    "Nonlinear aircraft model"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    13
+	    Points		    [0, 350]
+	    DstBlock		    "Linear aircraft model"
+	    DstPort		    2
+	  }
+	}
+      }
+    }
+  }
+}

@@ -1,0 +1,1435 @@
+Model {
+  Name			  "svm_oloop"
+  Version		  8.6
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  GraphicalInterface {
+    NumRootInports	    2
+    Inport {
+      Name		      "n"
+      BusObject		      ""
+      SignalName	      "n"
+      OutputFunctionCall      "off"
+    }
+    Inport {
+      Name		      "nw"
+      BusObject		      ""
+      SignalName	      "n"
+      OutputFunctionCall      "off"
+    }
+    NumRootOutports	    1
+    Outport {
+      Name		      "x"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+    }
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.78"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [-3.0, -3.0, 1542.0, 940.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		5
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "9"
+	  Extents		  [1877.0, 981.0]
+	  ZoomFactor		  [1.2499999999999998]
+	  Offset		  [-326.13764676794506, -131.23331301907382]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "9:30"
+	  Extents		  [11189.0, 5323.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [4.5474735088646412e-13, -0.20000000000004547]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "9:26"
+	  Extents		  [4576.0, 2174.0]
+	  ZoomFactor		  [1.7499999999999984]
+	  Offset		  [147.43639286026269, 201.97732054692693]
+	}
+	Object {
+	  $ObjectID		  8
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1877.0, 981.0]
+	  ZoomFactor		  [1.2499999999999991]
+	  Offset		  [232.90580114632587, -68.331172015672365]
+	}
+	Object {
+	  $ObjectID		  9
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "9:23"
+	  Extents		  [3661.0, 1739.0]
+	  ZoomFactor		  [2.0]
+	  Offset		  [-76.450638786576746, 38.450638786576746]
+	}
+	PropName		"EditorsInfo"
+      }
+    }
+  }
+  Created		  "Wed Dec 16 18:46:42 2015"
+  Creator		  "j.bolting"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "j.bolting"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Apr 27 14:23:28 2016"
+  RTWModifiedTimeStamp	  383667807
+  ModelVersionFormat	  "1.%<AutoIncrement:78>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    10
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "svm_linmod"
+    overrideMode_	    [0.0]
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "svm_linmod"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      []
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      11
+      Version		      "1.15.1"
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  12
+	  Version		  "1.15.1"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "uavsim.svm.tsample_model"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "FixedStepAuto"
+	  SolverName		  "FixedStepAuto"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  13
+	  Version		  "1.15.1"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Dataset"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  14
+	  Version		  "1.15.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  128
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  15
+	  Version		  "1.15.1"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "EnableAllAsError"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "none"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  IntegerSaturationMsg	  "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  16
+	  Version		  "1.15.1"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  64
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "Float"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  64
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "Intel->x86-64 (Windows64)"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  17
+	  Version		  "1.15.1"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  18
+	  Version		  "1.15.1"
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  19
+	  Version		  "1.15.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    13
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      20
+	      Version		      "1.15.1"
+	      Array {
+		Type			"Cell"
+		Dimension		24
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"ParameterTuningSideEffectCode"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      21
+	      Version		      "1.15.1"
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"GenerateAllocFcn"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Use local settings"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  22
+	  Version		  "1.15.1"
+	  Description		  "Simulink Coverage Configuration Component"
+	  Name			  "Simulink Coverage"
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovMetricSettings	  "dw"
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  on
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 225, 90, 1311, 756 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    11
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    23
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputSignals	      "signal1,signal2,signal3"
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  System {
+    Name		    "svm_oloop"
+    Location		    [-3, -3, 1539, 937]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "125"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "33"
+    Block {
+      BlockType		      Inport
+      Name		      "n"
+      SID		      "16"
+      Position		      [650, 168, 680, 182]
+      ZOrder		      1554
+      IconDisplay	      "Port number"
+      PortDimensions	      "3"
+      Port {
+	PortNumber		1
+	Name			"n"
+	Array {
+	  Type			  "Struct"
+	  Dimension		  1
+	  MATStruct {
+	    Type		    "in"
+	    OpenLoop		    "off"
+	    BusElementName	    ""
+	  }
+	  PropName		  "LinearAnalysisIO"
+	}
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "nw"
+      SID		      "31"
+      Position		      [650, 328, 680, 342]
+      ZOrder		      1890
+      Port		      "2"
+      IconDisplay	      "Port number"
+      PortDimensions	      "3"
+      Port {
+	PortNumber		1
+	Name			"n"
+	Array {
+	  Type			  "Struct"
+	  Dimension		  1
+	  MATStruct {
+	    Type		    "in"
+	    OpenLoop		    "off"
+	    BusElementName	    ""
+	  }
+	  PropName		  "LinearAnalysisIO"
+	}
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector"
+      SID		      "1"
+      Ports		      [1, 2]
+      Position		      [1040, 121, 1065, 179]
+      ZOrder		      1542
+      ShowName		      off
+      OutputSignals	      "p,v"
+      Port {
+	PortNumber		1
+	Name			"<p>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<v>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusCreator
+      Name		      "Bus Object Bus Creator1"
+      SID		      "3"
+      Ports		      [1, 1]
+      Position		      [735, 156, 770, 194]
+      ZOrder		      1547
+      ShowName		      off
+      AttributesFormatString  "%<OutDataTypeStr>"
+      CopyFcn		      "set_param(gcb, 'LinkStatus', 'none')"
+      Inputs		      "1"
+      DisplayOption	      "bar"
+      OutDataTypeStr	      "Bus: svm_bus_u"
+      InheritFromInputs	      on
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		24
+	$ClassName		"Simulink.Mask"
+	Type			"BUS OBJECT Bus Creator"
+	Description		"Provides users the cabability to painlessly, instantly customize bus creators of output data type 'Bus:"
+	"' by selecting the bus object type from a drop down menu dynamically populated by bus objects in the workspace. \n\nA"
+	"fter pressing the \"Apply Selection\" button signal lines into the creator are populated and named with the elements "
+	"in the chosen bus saving the user from having to recall and fill out signal line names.\n\nNOTE that when copying a B"
+	"us Object Bus Creator from your locked Library the link to the Library is automatically broken. This saves the user f"
+	"rom having to Unlock Links To Library (From the Library menu.), Disable Link and finally Break Link (Both from the Mo"
+	"del menu.) for every placed instance of the block."
+	Object {
+	  $PropName		  "Parameters"
+	  $ObjectID		  25
+	  $ClassName		  "Simulink.MaskParameter"
+	  Type			  "popup"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    16
+	    Cell		    "Bus: Acceleration"
+	    Cell		    "Bus: Aero"
+	    Cell		    "Bus: Airframe"
+	    Cell		    "Bus: Attitude"
+	    Cell		    "Bus: CMD"
+	    Cell		    "Bus: Environment"
+	    Cell		    "Bus: FlightGearData"
+	    Cell		    "Bus: Kinematics"
+	    Cell		    "Bus: Position"
+	    Cell		    "Bus: RotationalAcceleration"
+	    Cell		    "Bus: RotationalVelocity"
+	    Cell		    "Bus: Velocity"
+	    Cell		    "Bus: svm_bus_d_exo"
+	    Cell		    "Bus: svm_bus_u"
+	    Cell		    "Bus: svm_bus_x"
+	    Cell		    "Bus: svm_bus_xi"
+	    PropName		    "TypeOptions"
+	  }
+	  Name			  "busType"
+	  Prompt		  "Bus Type"
+	  Value			  "Bus: svm_bus_u"
+	  Tunable		  "off"
+	  Callback		  "% Using variable names terminated with \"_BOBC\" to lessen the chances of\n% collisions with existing "
+	  "workspace variables.\n\n% Get the current block handle and mask handle.\nhandleCreator_BOBC = gcbh;\nmaskObj_BOBC  "
+	  "     = Simulink.Mask.get(gcb);\n\n% Get a list of variables in the workspace in order to search for the '1x1\n% Bus"
+	  "' types.\nwsVars_BOBC = whos;\n\n% Reset the 'TypeOptions' bus list in case some '1x1 Bus' types have been\n% delet"
+	  "ed from or added to the workspace.\nmaskObj_BOBC.Parameters.TypeOptions = {'<empty>'};\n\n% Reset the bus count.\nb"
+	  "usCount_BOBC = 0;\n\nfor index_BOBC = 1:length(wsVars_BOBC)\n\n   % If the variable is a bus object...\n   if strcm"
+	  "p(wsVars_BOBC(index_BOBC).class, 'Simulink.Bus')\n\n      busCount_BOBC = busCount_BOBC + 1;\n\n      % ... add it "
+	  "to the TypeOptions of the mask.\n      maskObj_BOBC.Parameters.TypeOptions(busCount_BOBC) = ...\n                  "
+	  "                                         ...\n                                 {['Bus: ', wsVars_BOBC(index_BOBC).n"
+	  "ame]};\n   end\nend\n\nif busCount_BOBC == 0\n\n   % If there are NO bus objects in the workspace then provide a wa"
+	  "rning\n   % popup...\n   warndlg('There are currently no bus objects in the workspace - you have no use for this bl"
+	  "ock. Use a normal Bus Creator instead.')\n\n   % ... and do nothing.\nelseif ~strcmp(get_param(handleCreator_BOBC, "
+	  "'OutDataTypeStr'), 'Inherit: auto')\n\n   % If the currently selected bus data type ('OutDataTypeStr') is not\n   %"
+	  " 'Inherit: auto' (i.e., if we are reopening the mask.) then get the\n   % current 'OutDataTypeStr' and 'maskVal.' ("
+	  "'maskVal' is the selected\n   % 'TypeOptions' list member.)\n   outDatStr_BOBC = get_param(handleCreator_BOBC, 'Out"
+	  "DataTypeStr');\n   maskVal_BOBC   = get_param(handleCreator_BOBC, 'MaskValues');\n\n   if ~strcmp(outDatStr_BOBC, m"
+	  "askVal_BOBC{1})\n\n      % Upon re-opening the mask if the default 'TypeOptions' list member\n      % (The first on"
+	  "e.) contained in 'maskVal' does not match the\n      % currently selected bus data type ('OutDataTypeStr') then set"
+	  " the\n      % 'TypeOptions' list member to the selected bus data type. (Cuts down\n      % on confusion to have the"
+	  " displayed list member match the selected\n      % bus data type rather than the first entry.)\n      set_param(han"
+	  "dleCreator_BOBC, 'MaskValues', {outDatStr_BOBC});\n   end\nend\n\n% Clean up the workspace.\nclear  handleCreator_B"
+	  "OBC  maskObj_BOBC     wsVars_BOBC ...\n            busCount_BOBC    index_BOBC  outDatStr_BOBC ...\n             ma"
+	  "skVal_BOBC"
+	}
+	Array {
+	  Type			  "Simulink.dialog.Group"
+	  Dimension		  2
+	  Object {
+	    $ObjectID		    26
+	    Prompt		    "%<MaskType>"
+	    Object {
+	      $PropName		      "DialogControls"
+	      $ObjectID		      27
+	      $ClassName	      "Simulink.dialog.Text"
+	      Prompt		      "%<MaskDescription>"
+	      Name		      "DescTextVar"
+	    }
+	    Name		    "DescGroupVar"
+	  }
+	  Object {
+	    $ObjectID		    28
+	    Prompt		    "Simulink:studio:ToolBarParametersMenu"
+	    Array {
+	      Type		      "Simulink.dialog.Control"
+	      Dimension		      2
+	      Object {
+		$ObjectID		29
+		$ClassName		"Simulink.dialog.parameter.Popup"
+		Name			"busType"
+	      }
+	      Object {
+		$ObjectID		30
+		$ClassName		"Simulink.dialog.Button"
+		Prompt			"Apply Selection"
+		Callback		"% Using variable names terminated with \"_BOBC\" to lessen the chances of\n% collisions with existing wor"
+		"kspace variables.\n\n% Get the current block, current block handle and mask handle.\ncurrentBlock_BOBC  = gcb;\nhand"
+		"leCreator_BOBC = gcbh;\n\n% Get the desired bus type...\ndesiredBusType_BOBC = get_param(handleCreator_BOBC, 'busTyp"
+		"e');\n\n% ... and set the 'OutDataTypeStr' to it.\nset_param(handleCreator_BOBC, 'OutDataTypeStr', desiredBusType_BO"
+		"BC);\n\n%% First delete any existing lines on the port.\n% Get the line handles.\nlh_BOBC = get_param(handleCreator_"
+		"BOBC, 'LineHandles');\n\n% If any lines exist (Non- -1 line handles.), delete them and start over.\nif max(lh_BOBC.I"
+		"nport > 0)\n\n   for index_BOBC = 1:length(lh_BOBC.Inport)\n\n      if lh_BOBC.Inport(index_BOBC) > 0\n\n         de"
+		"lete_line(lh_BOBC.Inport(index_BOBC))\n      end\n   end\nend\n\n%% Then work on adding new lines.\n\n% Get the bloc"
+		"k path for 'add_line' function.\nblockPath_BOBC = get_param(handleCreator_BOBC, 'Parent');\n\n% Get the newly select"
+		"ed bus type ('OutDataTypeStr')...\nmocbBusType_BOBC = get_param(currentBlock_BOBC, 'OutDataTypeStr');\n\n% ... and p"
+		"arse off \"Bus: \" so the string of the desired bus contained in\n% 'OutDataTypeStr' matches the raw workspace bus n"
+		"ames.\nmocbBusType_BOBC = mocbBusType_BOBC(6:end);\n\n% Then evaluate the string containing the workspace bus name w"
+		"hich will\n% load the desired bus parameters.\nbusParams_BOBC = eval(mocbBusType_BOBC);\n\n% From the parameters gra"
+		"b the number of lines to add.\nnumLines_BOBC = length(busParams_BOBC.Elements);\n\n% Set the number of inputs of the"
+		" masked bus creator to the number of lines\n% to add.\nset_param(handleCreator_BOBC, 'Inputs', num2str(numLines_BOBC"
+		"));\n\n% Get (Inputs.) port handles so we can grab the positions of them.\nph_BOBC = get_param(handleCreator_BOBC, '"
+		"PortHandles');\n\nfor index_BOBC = 1:numLines_BOBC\n\n   % Get the position of input port number 'index_BOBC'.\n   p"
+		"ortPos_BOBC = get_param(ph_BOBC.Inport(index_BOBC), 'Position');\n\n   % Add a line from 50 pixels left of the port "
+		"position to the port\n   % position. (This must be done because it's the lines that get named,\n   % not the port po"
+		"sitions.)\n   portLine_BOBC = add_line(blockPath_BOBC, [portPos_BOBC - [50 0]; portPos_BOBC]);\n\n   % Rename the ne"
+		"w line to the bus 'index_BOBC-st/nd/rd/th' element name.\n   set_param(portLine_BOBC, 'Name', busParams_BOBC.Element"
+		"s(index_BOBC).Name)\nend\n\n%% Cleanup the workspace.\nclear    currentBlock_BOBC  handleCreator_BOBC      index_BOB"
+		"C ...\n       desiredBusType_BOBC             lh_BOBC  blockPath_BOBC ...\n          mocbBusType_BOBC      busParams"
+		"_BOBC   numLines_BOBC ...\n                   ph_BOBC        portPos_BOBC   portLine_BOBC"
+		Row			"current"
+		Name			"applyMOCBSelection"
+	      }
+	      PropName		      "DialogControls"
+	    }
+	    Name		    "ParameterGroupVar"
+	  }
+	  PropName		  "DialogControls"
+	}
+      }
+    }
+    Block {
+      BlockType		      BusCreator
+      Name		      "Bus Object Bus Creator2"
+      SID		      "30"
+      Ports		      [1, 1]
+      Position		      [735, 311, 770, 359]
+      ZOrder		      1889
+      ShowName		      off
+      AttributesFormatString  "%<OutDataTypeStr>"
+      CopyFcn		      "set_param(gcb, 'LinkStatus', 'none')"
+      Inputs		      "1"
+      DisplayOption	      "bar"
+      OutDataTypeStr	      "Bus: svm_bus_u"
+      InheritFromInputs	      on
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		31
+	$ClassName		"Simulink.Mask"
+	Type			"BUS OBJECT Bus Creator"
+	Description		"Provides users the cabability to painlessly, instantly customize bus creators of output data type 'Bus:"
+	"' by selecting the bus object type from a drop down menu dynamically populated by bus objects in the workspace. \n\nA"
+	"fter pressing the \"Apply Selection\" button signal lines into the creator are populated and named with the elements "
+	"in the chosen bus saving the user from having to recall and fill out signal line names.\n\nNOTE that when copying a B"
+	"us Object Bus Creator from your locked Library the link to the Library is automatically broken. This saves the user f"
+	"rom having to Unlock Links To Library (From the Library menu.), Disable Link and finally Break Link (Both from the Mo"
+	"del menu.) for every placed instance of the block."
+	Object {
+	  $PropName		  "Parameters"
+	  $ObjectID		  32
+	  $ClassName		  "Simulink.MaskParameter"
+	  Type			  "popup"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    16
+	    Cell		    "Bus: Acceleration"
+	    Cell		    "Bus: Aero"
+	    Cell		    "Bus: Airframe"
+	    Cell		    "Bus: Attitude"
+	    Cell		    "Bus: CMD"
+	    Cell		    "Bus: Environment"
+	    Cell		    "Bus: FlightGearData"
+	    Cell		    "Bus: Kinematics"
+	    Cell		    "Bus: Position"
+	    Cell		    "Bus: RotationalAcceleration"
+	    Cell		    "Bus: RotationalVelocity"
+	    Cell		    "Bus: Velocity"
+	    Cell		    "Bus: svm_bus_d_exo"
+	    Cell		    "Bus: svm_bus_u"
+	    Cell		    "Bus: svm_bus_x"
+	    Cell		    "Bus: svm_bus_xi"
+	    PropName		    "TypeOptions"
+	  }
+	  Name			  "busType"
+	  Prompt		  "Bus Type"
+	  Value			  "Bus: svm_bus_u"
+	  Tunable		  "off"
+	  Callback		  "% Using variable names terminated with \"_BOBC\" to lessen the chances of\n% collisions with existing "
+	  "workspace variables.\n\n% Get the current block handle and mask handle.\nhandleCreator_BOBC = gcbh;\nmaskObj_BOBC  "
+	  "     = Simulink.Mask.get(gcb);\n\n% Get a list of variables in the workspace in order to search for the '1x1\n% Bus"
+	  "' types.\nwsVars_BOBC = whos;\n\n% Reset the 'TypeOptions' bus list in case some '1x1 Bus' types have been\n% delet"
+	  "ed from or added to the workspace.\nmaskObj_BOBC.Parameters.TypeOptions = {'<empty>'};\n\n% Reset the bus count.\nb"
+	  "usCount_BOBC = 0;\n\nfor index_BOBC = 1:length(wsVars_BOBC)\n\n   % If the variable is a bus object...\n   if strcm"
+	  "p(wsVars_BOBC(index_BOBC).class, 'Simulink.Bus')\n\n      busCount_BOBC = busCount_BOBC + 1;\n\n      % ... add it "
+	  "to the TypeOptions of the mask.\n      maskObj_BOBC.Parameters.TypeOptions(busCount_BOBC) = ...\n                  "
+	  "                                         ...\n                                 {['Bus: ', wsVars_BOBC(index_BOBC).n"
+	  "ame]};\n   end\nend\n\nif busCount_BOBC == 0\n\n   % If there are NO bus objects in the workspace then provide a wa"
+	  "rning\n   % popup...\n   warndlg('There are currently no bus objects in the workspace - you have no use for this bl"
+	  "ock. Use a normal Bus Creator instead.')\n\n   % ... and do nothing.\nelseif ~strcmp(get_param(handleCreator_BOBC, "
+	  "'OutDataTypeStr'), 'Inherit: auto')\n\n   % If the currently selected bus data type ('OutDataTypeStr') is not\n   %"
+	  " 'Inherit: auto' (i.e., if we are reopening the mask.) then get the\n   % current 'OutDataTypeStr' and 'maskVal.' ("
+	  "'maskVal' is the selected\n   % 'TypeOptions' list member.)\n   outDatStr_BOBC = get_param(handleCreator_BOBC, 'Out"
+	  "DataTypeStr');\n   maskVal_BOBC   = get_param(handleCreator_BOBC, 'MaskValues');\n\n   if ~strcmp(outDatStr_BOBC, m"
+	  "askVal_BOBC{1})\n\n      % Upon re-opening the mask if the default 'TypeOptions' list member\n      % (The first on"
+	  "e.) contained in 'maskVal' does not match the\n      % currently selected bus data type ('OutDataTypeStr') then set"
+	  " the\n      % 'TypeOptions' list member to the selected bus data type. (Cuts down\n      % on confusion to have the"
+	  " displayed list member match the selected\n      % bus data type rather than the first entry.)\n      set_param(han"
+	  "dleCreator_BOBC, 'MaskValues', {outDatStr_BOBC});\n   end\nend\n\n% Clean up the workspace.\nclear  handleCreator_B"
+	  "OBC  maskObj_BOBC     wsVars_BOBC ...\n            busCount_BOBC    index_BOBC  outDatStr_BOBC ...\n             ma"
+	  "skVal_BOBC"
+	}
+	Array {
+	  Type			  "Simulink.dialog.Group"
+	  Dimension		  2
+	  Object {
+	    $ObjectID		    33
+	    Prompt		    "%<MaskType>"
+	    Object {
+	      $PropName		      "DialogControls"
+	      $ObjectID		      34
+	      $ClassName	      "Simulink.dialog.Text"
+	      Prompt		      "%<MaskDescription>"
+	      Name		      "DescTextVar"
+	    }
+	    Name		    "DescGroupVar"
+	  }
+	  Object {
+	    $ObjectID		    35
+	    Prompt		    "Simulink:studio:ToolBarParametersMenu"
+	    Array {
+	      Type		      "Simulink.dialog.Control"
+	      Dimension		      2
+	      Object {
+		$ObjectID		36
+		$ClassName		"Simulink.dialog.parameter.Popup"
+		Name			"busType"
+	      }
+	      Object {
+		$ObjectID		37
+		$ClassName		"Simulink.dialog.Button"
+		Prompt			"Apply Selection"
+		Callback		"% Using variable names terminated with \"_BOBC\" to lessen the chances of\n% collisions with existing wor"
+		"kspace variables.\n\n% Get the current block, current block handle and mask handle.\ncurrentBlock_BOBC  = gcb;\nhand"
+		"leCreator_BOBC = gcbh;\n\n% Get the desired bus type...\ndesiredBusType_BOBC = get_param(handleCreator_BOBC, 'busTyp"
+		"e');\n\n% ... and set the 'OutDataTypeStr' to it.\nset_param(handleCreator_BOBC, 'OutDataTypeStr', desiredBusType_BO"
+		"BC);\n\n%% First delete any existing lines on the port.\n% Get the line handles.\nlh_BOBC = get_param(handleCreator_"
+		"BOBC, 'LineHandles');\n\n% If any lines exist (Non- -1 line handles.), delete them and start over.\nif max(lh_BOBC.I"
+		"nport > 0)\n\n   for index_BOBC = 1:length(lh_BOBC.Inport)\n\n      if lh_BOBC.Inport(index_BOBC) > 0\n\n         de"
+		"lete_line(lh_BOBC.Inport(index_BOBC))\n      end\n   end\nend\n\n%% Then work on adding new lines.\n\n% Get the bloc"
+		"k path for 'add_line' function.\nblockPath_BOBC = get_param(handleCreator_BOBC, 'Parent');\n\n% Get the newly select"
+		"ed bus type ('OutDataTypeStr')...\nmocbBusType_BOBC = get_param(currentBlock_BOBC, 'OutDataTypeStr');\n\n% ... and p"
+		"arse off \"Bus: \" so the string of the desired bus contained in\n% 'OutDataTypeStr' matches the raw workspace bus n"
+		"ames.\nmocbBusType_BOBC = mocbBusType_BOBC(6:end);\n\n% Then evaluate the string containing the workspace bus name w"
+		"hich will\n% load the desired bus parameters.\nbusParams_BOBC = eval(mocbBusType_BOBC);\n\n% From the parameters gra"
+		"b the number of lines to add.\nnumLines_BOBC = length(busParams_BOBC.Elements);\n\n% Set the number of inputs of the"
+		" masked bus creator to the number of lines\n% to add.\nset_param(handleCreator_BOBC, 'Inputs', num2str(numLines_BOBC"
+		"));\n\n% Get (Inputs.) port handles so we can grab the positions of them.\nph_BOBC = get_param(handleCreator_BOBC, '"
+		"PortHandles');\n\nfor index_BOBC = 1:numLines_BOBC\n\n   % Get the position of input port number 'index_BOBC'.\n   p"
+		"ortPos_BOBC = get_param(ph_BOBC.Inport(index_BOBC), 'Position');\n\n   % Add a line from 50 pixels left of the port "
+		"position to the port\n   % position. (This must be done because it's the lines that get named,\n   % not the port po"
+		"sitions.)\n   portLine_BOBC = add_line(blockPath_BOBC, [portPos_BOBC - [50 0]; portPos_BOBC]);\n\n   % Rename the ne"
+		"w line to the bus 'index_BOBC-st/nd/rd/th' element name.\n   set_param(portLine_BOBC, 'Name', busParams_BOBC.Element"
+		"s(index_BOBC).Name)\nend\n\n%% Cleanup the workspace.\nclear    currentBlock_BOBC  handleCreator_BOBC      index_BOB"
+		"C ...\n       desiredBusType_BOBC             lh_BOBC  blockPath_BOBC ...\n          mocbBusType_BOBC      busParams"
+		"_BOBC   numLines_BOBC ...\n                   ph_BOBC        portPos_BOBC   portLine_BOBC"
+		Row			"current"
+		Name			"applyMOCBSelection"
+	      }
+	      PropName		      "DialogControls"
+	    }
+	    Name		    "ParameterGroupVar"
+	  }
+	  PropName		  "DialogControls"
+	}
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      SID		      "22"
+      Ports		      [2, 1]
+      Position		      [1115, 121, 1135, 179]
+      ZOrder		      1560
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Array {
+	  Type			  "Struct"
+	  Dimension		  1
+	  MATStruct {
+	    Type		    "out"
+	    OpenLoop		    "off"
+	    BusElementName	    ""
+	  }
+	  PropName		  "LinearAnalysisIO"
+	}
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Standard Vehicle Model"
+      SID		      "9"
+      Ports		      [2, 3]
+      Position		      [825, 96, 975, 414]
+      ZOrder		      1539
+      ForegroundColor	      "red"
+      BackgroundColor	      "yellow"
+      LibraryVersion	      "1.417"
+      SourceBlock	      "svm_lib/Standard Vehicle Model"
+      SourceType	      ""
+      ContentPreviewEnabled   off
+      mask_p0_NED	      "[0 0 0]"
+      mask_v0_NED	      "[15 0 0]"
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      SID		      "32"
+      Position		      [1090, 245, 1110, 265]
+      ZOrder		      1891
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      SID		      "33"
+      Position		      [1090, 350, 1110, 370]
+      ZOrder		      1892
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "x"
+      SID		      "23"
+      Position		      [1175, 143, 1205, 157]
+      ZOrder		      1561
+      IconDisplay	      "Port number"
+    }
+    Line {
+      ZOrder		      45
+      SrcBlock		      "Standard Vehicle Model"
+      SrcPort		      1
+      DstBlock		      "Bus\nSelector"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      21
+      SrcBlock		      "Bus Object Bus Creator1"
+      SrcPort		      1
+      DstBlock		      "Standard Vehicle Model"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<v>"
+      ZOrder		      29
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      2
+      DstBlock		      "Mux"
+      DstPort		      2
+    }
+    Line {
+      Name		      "<p>"
+      ZOrder		      30
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      1
+      DstBlock		      "Mux"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      31
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "x"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      52
+      SrcBlock		      "Bus Object Bus Creator2"
+      SrcPort		      1
+      DstBlock		      "Standard Vehicle Model"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      56
+      SrcBlock		      "Standard Vehicle Model"
+      SrcPort		      2
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      57
+      SrcBlock		      "Standard Vehicle Model"
+      SrcPort		      3
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "n"
+      ZOrder		      59
+      Labels		      [1, 1]
+      SrcBlock		      "nw"
+      SrcPort		      1
+      DstBlock		      "Bus Object Bus Creator2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "n"
+      ZOrder		      61
+      Labels		      [-1, 0]
+      SrcBlock		      "n"
+      SrcPort		      1
+      DstBlock		      "Bus Object Bus Creator1"
+      DstPort		      1
+    }
+  }
+}
+#Finite State Machines
+#
+#   Stateflow 80000006
+#
+#
+Stateflow {
+  machine {
+    id			    1
+    name		    "svm_oloop"
+    created		    "26-Dec-2015 19:49:51"
+    isLibrary		    0
+    firstTarget		    2
+    sfVersion		    80000006
+  }
+  target {
+    id			    2
+    name		    "sfun"
+    description		    "Default Simulink S-Function Target."
+    machine		    1
+    linkNode		    [1 0 0]
+  }
+}
