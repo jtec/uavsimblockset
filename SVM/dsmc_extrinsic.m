@@ -40,7 +40,7 @@ x = [dp; dv];
 A = [eye(3)   T*eye(3);
     zeros(3) eye(3)];
 B = [zeros(3); T*eye(3)];
-% Estimate lumped acceleleration perturbations during the transition from
+% Estimate lumped acceleration perturbations during the transition from
 % the last sample to the current one:
 a_w = dv - history(1).dv - T*history(1).nc*9.81;
 x_tilde = x;
