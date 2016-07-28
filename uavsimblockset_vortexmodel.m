@@ -99,7 +99,7 @@ if n_relevantUAS > 0
                 
                 debugos = true;
                 if debugos
-                    computeInducedV(ID, VortexSig, stack, maximoleader);
+                    computeDistributions(ID, VortexSig, stack, maximoleader);
                 end
                 [stack] = computeEffectiveVAndOmega(VortexSig, ID, maximoleader, stack);
             end
@@ -175,48 +175,49 @@ vi_av = vi_av ./ length(steps);
 end
 
 % Computes the induced velocity distribution at discrete points:
-function computeInducedV(ID, VortexSig, stack, maximoleader)
+function computeDistributions(ID, VortexSig, stack, maximoleader)
 b = VortexSig(ID).b_m;
 
-vi_alongBodyX = distribution(VortexSig(ID), [0 0 0]', [1 0 0]', [-b, b], stack, maximoleader);
-vi_alongBodyZ = distribution(VortexSig(ID),[0 0 0]', [0 0 1]', [-b, b]', stack, maximoleader);
-vi_alongtheleftwing = distribution(VortexSig(ID),[0 0 0]', stack.leftwingvector, [0 b], stack, maximoleader);
-vi_alongtherightwing = distribution(VortexSig(ID),[0 0 0]', - stack.rightwingvector, [0 -b], stack, maximoleader);
+vi_alongBodyX = distribution(VortexSig(ID), [0 0 0]', [1 0 0]', [-60*b, 20*b], stack, maximoleader);
+vi_alongBodyZ = distribution(VortexSig(ID),[0 0 0]', [0 0 1]', [-2*b, 2*b]', stack, maximoleader);
+vi_alongtheleftwing = distribution(VortexSig(ID),[0 0 0]', stack.leftwingvector, [0 3*b], stack, maximoleader);
+vi_alongtherightwing = distribution(VortexSig(ID),[0 0 0]', - stack.rightwingvector, [0 -3*b], stack, maximoleader);
 vi_alongthewing = [vi_alongtheleftwing vi_alongtherightwing];
 %
 % % Piotr:
 figure(84)
 subplot(3,2,1)
-plot(vi_alongthewing(1,:), vi_alongthewing(2,:) );
+bref = maximoleader.b_m;
+plot(vi_alongthewing(1,:)./bref, vi_alongthewing(2,:) );
 title('Wx along the wing')
 grid on;
-%axis([-4,4,-0.4,0.3]);
+axis([-4,4,-0.4,0.3]);
 subplot(3,2,2)
-plot(vi_alongBodyZ(1,:), vi_alongBodyZ(2,:) );
+plot(vi_alongBodyZ(1,:)./bref, vi_alongBodyZ(2,:) );
 title('Wx along body z')
-%axis([-2,2,-0.01,0.06]);
+axis([-2,2,-0.01,0.06]);
 grid on;
 
 subplot(3,2,3)
-plot(vi_alongBodyX(1,:), vi_alongBodyX(3,:) );
+plot(vi_alongBodyX(1,:)./bref, vi_alongBodyX(3,:) );
 title('Wy along body x')
-%axis([-60,20,-0.2,0.3]);
+axis([-60,20,-0.2,0.3]);
 grid on;
 subplot(3,2,4)
-plot(vi_alongBodyZ(1,:), vi_alongBodyZ(3,:) );
+plot(vi_alongBodyZ(1,:)./bref, vi_alongBodyZ(3,:) );
 title('Wy along body z')
-%axis([-2,2,-0.4,0.3]);
+axis([-2,2,-0.4,0.3]);
 grid on;
 
 subplot(3,2,5)
-plot(vi_alongBodyX(1,:), vi_alongBodyX(4,:) );
+plot(vi_alongBodyX(1,:)./bref, vi_alongBodyX(4,:) );
 title('Wz along body x')
-%axis([-60,20,-0.4,0.1]);
+axis([-60,20,-0.4,0.1]);
 grid on;
 subplot(3,2,6)
-plot(vi_alongthewing(1,:), vi_alongthewing(4,:) );
+plot(vi_alongthewing(1,:)./bref, vi_alongthewing(4,:) );
 title('Wz along the wing')
-%axis([-4,4,-1.5,2.5]);
+axis([-4,4,-1.5,2.5]);
 grid on;
 
 drawnow;
@@ -236,7 +237,7 @@ for i=1:length(steps);
     p = p0 + steps(i) * u;
     [vi_dist(2:4, i), ~] = getVi(p, inducee, inducer, stack);
     ps(:, i) = p;
-    vi_dist(1, i) = steps(i)/inducee.b_m;
+    vi_dist(1, i) = steps(i);
 end
 end
 
@@ -269,18 +270,16 @@ function [vi_b, vi_NED]= getVi(p_bfollower, follower, leader, stack)
 % Find point coordinates in the leader's wind frame:
 % First compute position of the follower's body frame in the
 % leader's wind frame.
-% relative position vector in the NED frame:
-d_NED = body2NED(p_bfollower, follower.p_NED_m, follower.qAttitude) - leader.p_NED_m;
-% rotate to the leader's wind frame:
-d_wleader = stack.DCM_ew_leader' * d_NED;
-% Transform point:
-p_wleader = zeros(3,1);
-p_wleader = fflib_frame2frame(p_bfollower, d_wleader, ffb_dcm2quat(stack.DCM_windLeader2bodyFollower)');
+% Relative position vector between leader the point of interest in the NED
+% frame: 
+d_NED =  body2NED(p_bfollower, follower.p_NED_m, follower.qAttitude) - leader.p_NED_m;
+% Rotate to the leader's wind frame:
+p_wleader = stack.DCM_ew_leader' * d_NED;
 % Compute the velocities induced by the right and the left
 % filament:
 % Get induced velocities:
-vi_wleader = computeVi(p_wleader, stack.p0_leftFilament_wleader, [1 0 0]', leader, d_wleader) ...
-    + 0*computeVi(p_wleader, stack.p0_rightFilament_wleader, [-1 0 0]', leader, d_wleader);
+vi_wleader = computeVi(p_wleader, stack.p0_leftFilament_wleader, [1 0 0]', leader) ...
+    + computeVi(p_wleader, stack.p0_rightFilament_wleader, [-1 0 0]', leader);
 vi_b = stack.DCM_windLeader2bodyFollower * vi_wleader;
 vi_NED = stack.DCM_be_follower' * vi_b;
 end
@@ -289,10 +288,10 @@ end
 % starts at the given point in the leader's wind frame.
 % The unit vector u_senseofrotation_wleader indicates the sense of
 % rotation of the vortex (right hand rule).
-function vi_wleader = computeVi(p_wleader, p0_filament_wleader, u_senseofrotation_wleader, leader, d_wleader)
+function vi_wleader = computeVi(p_wleader, p0_filament_wleader, u_senseofrotation_wleader, leader)
 % To compute the norm of the induced velocity, we need the
 % longitudinal separation to compute the vortex age tau:
-dx = d_wleader(1);
+dx = p_wleader(1);
 % Vortex age tau:
 tau = norm(dx / norm(leader.v_NED_mps));
 % Disable core:
