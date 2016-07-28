@@ -81,6 +81,8 @@ if n_relevantUAS > 0
                 
                 % Compute bounding points:
                 if ~isfield(VortexSig(ID), 'checkpoints')
+                    stack.rightwingvector = ffb_angle2dcm(this.sweep_rad, this.dihedral_rad, 0)' * [0 1 0]';
+                    stack.winglength = this.b_m/stack.rightwingvector(2);
                     stack.checkpoints.center = [0 0 0]';
                     stack.checkpoints.nose = VortexSig(ID).pNose_b_m;
                     stack.checkpoints.rear = VortexSig(ID).pRear_b_m;
@@ -181,7 +183,8 @@ b = VortexSig(ID).b_m;
 vi_alongBodyX = distribution(VortexSig(ID), [0 0 0]', [1 0 0]', [-60*b, 20*b], stack, maximoleader);
 vi_alongBodyZ = distribution(VortexSig(ID),[0 0 0]', [0 0 1]', [-2*b, 2*b]', stack, maximoleader);
 vi_alongtheleftwing = distribution(VortexSig(ID),[0 0 0]', stack.leftwingvector, [0 3*b], stack, maximoleader);
-vi_alongtherightwing = distribution(VortexSig(ID),[0 0 0]', - stack.rightwingvector, [0 -3*b], stack, maximoleader);
+vi_alongtheleftwing(1,:) = -vi_alongtheleftwing(1,:);
+vi_alongtherightwing = distribution(VortexSig(ID),[0 0 0]', stack.rightwingvector, [0 3*b], stack, maximoleader);
 vi_alongthewing = [vi_alongtheleftwing vi_alongtherightwing];
 %
 % % Piotr:
@@ -254,14 +257,15 @@ end
 end
 
 % Computes the body frame coordinates of a point on the wing of the given
-% UAS for the given distance from the body frame's origin. The third
+% UAS for the given distance from the body frame's x-z plane. The third
 % parameter indicates the halfplane the point is supposed to lie in
 % (1=right wing, -1=left wing). Helpful e.g. to compute the positions of
 % the wing tips for an aircraft featuring dihedral and sweep angle.
-function p = getWingPoint(ac, r, hlfpl)
+function p = getWingPoint(ac, dy, hlfpl)
 % Compute unit vector pointing from the origin to the wing tip:
 wingvector = ffb_angle2dcm((hlfpl)*ac.sweep_rad, (hlfpl)*ac.dihedral_rad, 0)' * [0 hlfpl 0]';
-p = wingvector * r;
+winglength = abs(ac.b_m/wingvector(2));
+p = wingvector* dy*(winglength/ac.b_m);
 end
 
 % Computes the induced velocity vector in the follower's body frame at a
@@ -291,13 +295,12 @@ end
 function vi_wleader = computeVi(p_wleader, p0_filament_wleader, u_senseofrotation_wleader, leader)
 % To compute the norm of the induced velocity, we need the
 % longitudinal separation to compute the vortex age tau:
-dx = p_wleader(1);
+dx = abs(p_wleader(1));
 % Vortex age tau:
 tau = norm(dx / norm(leader.v_NED_mps));
 % Disable core:
 % tau = 1e-6;
 vortexStrength = 0.5 * leader.CL * norm(leader.v_NED_mps) * leader.cbar_m;
-% TODO Have a closer look at the empirical value for nu used in eq. 32.
 empiricalNu = 0.06*vortexStrength;
 rc = 2.24 * sqrt(empiricalNu * tau);
 % Compute the radial distance between the filament and the
