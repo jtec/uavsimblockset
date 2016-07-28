@@ -57,8 +57,8 @@ ix0 = [10:12];
 u0  = [0; 0; 0; 1; 0; zeros(6,1)];
 % No flaps, no turbulence for trim:
 iu0 = [5, 6:11]';
-%     [V   alpha beta  eulers_rad     p_NED_m  omega nz vNED gamma chi]
-y0  = [Va; 0;    0;    zeros(3,1);    zeros(3,1);  zeros(3,1); 0; zeros(3,1); 0; 0];
+%     [V   alpha beta  eulers_rad     p_NED_m  omega nz vNED gamma chi FMaero_bf]
+y0  = [Va; 0;    0;    zeros(3,1);    zeros(3,1);  zeros(3,1); 0; zeros(3,1); 0; 0; zeros(6,1)];
 iy0 = [1,3];
 
 % Call the matlab 'trim' function:

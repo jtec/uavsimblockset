@@ -65,7 +65,7 @@ Model {
       BusObject		      ""
       OutputFunctionCall      "off"
     }
-    NumRootOutports	    21
+    NumRootOutports	    27
     Outport {
       Name		      "Va_mps"
       BusObject		      ""
@@ -176,8 +176,38 @@ Model {
       BusObject		      ""
       BusOutputAsStruct	      "off"
     }
+    Outport {
+      Name		      "FMaero_bf_Fx"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+    }
+    Outport {
+      Name		      "FMaero_bf_Fy"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+    }
+    Outport {
+      Name		      "FMaero_bf_Fz"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+    }
+    Outport {
+      Name		      "FMaero_bf_Mx"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+    }
+    Outport {
+      Name		      "FMaero_bf_My"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+    }
+    Outport {
+      Name		      "FMaero_bf_Mz"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+    }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1610"
+    ComputedModelVersion    "1.1633"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -199,7 +229,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [192.0, 0.0, 1341.0, 837.0]
+      Location		      [192.0, 0.0, 1340.0, 836.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -221,28 +251,28 @@ Model {
 	Dimension		3
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [2343.0, 1075.0]
-	  ZoomFactor		  [0.8]
-	  Offset		  [6.213474225553, 146.35334019427751]
+	  Extents		  [1625.0, 851.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [1457.2965554619095, 1652.0650916719028]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "1067"
-	  Extents		  [1626.0, 852.0]
+	  Extents		  [1625.0, 851.0]
 	  ZoomFactor		  [1.25]
-	  Offset		  [59.741698536125341, 141.74042521055833]
+	  Offset		  [269.37916688503208, 69.149705062863177]
 	}
 	Object {
 	  $ObjectID		  7
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "1075"
-	  Extents		  [1626.0, 852.0]
+	  Extents		  [1625.0, 851.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [0.0, 0.0]
 	}
@@ -256,9 +286,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "j.bolting"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 10 14:20:15 2016"
-  RTWModifiedTimeStamp	  387469206
-  ModelVersionFormat	  "1.%<AutoIncrement:1610>"
+  LastModifiedDate	  "Tue Jul 26 13:47:14 2016"
+  RTWModifiedTimeStamp	  391441630
+  ModelVersionFormat	  "1.%<AutoIncrement:1633>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off
@@ -1134,7 +1164,7 @@ Model {
   }
   System {
     Name		    "uavsimblockset_trimModel_Cularis_turbulentAtmosphere"
-    Location		    [192, 0, 1533, 837]
+    Location		    [192, 0, 1532, 836]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1146,9 +1176,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1174"
+    SIDHighWatermark	    "1184"
     Block {
       BlockType		      Inport
       Name		      "da_rad"
@@ -1467,6 +1497,17 @@ Model {
     }
     Block {
       BlockType		      Demux
+      Name		      "Demux5"
+      SID		      "1184"
+      Ports		      [1, 6]
+      Position		      [1985, 1809, 2025, 2156]
+      ZOrder		      1479
+      ShowName		      off
+      Outputs		      "6"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
       Name		      "Demux7"
       SID		      "1145"
       Ports		      [1, 3]
@@ -1480,7 +1521,7 @@ Model {
       BlockType		      SubSystem
       Name		      "Dynamics with varying parameters"
       SID		      "1067"
-      Ports		      [2, 3]
+      Ports		      [2, 4]
       Position		      [1215, 495, 1370, 585]
       ZOrder		      1235
       RequestExecContextInheritance off
@@ -1507,7 +1548,7 @@ Model {
       }
       System {
 	Name			"Dynamics with varying parameters"
-	Location		[192, 0, 1533, 837]
+	Location		[192, 0, 1532, 836]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1533,7 +1574,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "CMD"
 	  SID			  "1069"
-	  Position		  [20, 248, 50, 262]
+	  Position		  [20, 283, 50, 297]
 	  ZOrder		  885
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1544,7 +1585,7 @@ Model {
 	  Name			  "Add"
 	  SID			  "1070"
 	  Ports			  [2, 1]
-	  Position		  [585, 254, 605, 361]
+	  Position		  [595, 264, 615, 371]
 	  ZOrder		  1233
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -1657,7 +1698,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Cularis aerodynamics"
-	    Location		    [-3, 0, 1538, 844]
+	    Location		    [192, 0, 1532, 836]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1669,7 +1710,7 @@ Model {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "80"
 	    SIDHighWatermark	    "4778"
 	    SIDPrevWatermark	    "4774"
 	    Block {
@@ -1720,7 +1761,7 @@ Model {
 	      Variant		      off
 	      System {
 		Name			"Aerodynamics"
-		Location		[-3, 0, 1538, 844]
+		Location		[192, 0, 1532, 836]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -1732,7 +1773,7 @@ Model {
 		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"100"
+		ZoomFactor		"80"
 		Block {
 		  BlockType		  Inport
 		  Name			  "CMD"
@@ -5286,8 +5327,16 @@ Model {
 	  BlockType		  Terminator
 	  Name			  "Terminator"
 	  SID			  "1074"
-	  Position		  [560, 460, 580, 480]
+	  Position		  [565, 417, 605, 463]
 	  ZOrder		  1232
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  SID			  "1175"
+	  Position		  [565, 477, 605, 523]
+	  ZOrder		  1470
 	  ShowName		  off
 	}
 	Block {
@@ -5357,7 +5406,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Trim Kinematics (euler angles)"
-	    Location		    [192, 0, 1533, 837]
+	    Location		    [192, 0, 1532, 836]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6185,6 +6234,16 @@ Model {
 	  IconDisplay		  "Port number"
 	  PortDimensions	  "3"
 	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "FMaero_bf"
+	  SID			  "1177"
+	  Position		  [1120, 248, 1150, 262]
+	  ZOrder		  1472
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  PortDimensions	  "6"
+	}
 	Line {
 	  Name			  "<Vground_bfrozen_mps>"
 	  ZOrder		  52
@@ -6248,16 +6307,16 @@ Model {
 	  ZOrder		  11
 	  SrcBlock		  "Add"
 	  SrcPort		  1
-	  Points		  [40, 0]
+	  Points		  [30, 0]
 	  Branch {
-	    ZOrder		    66
-	    Points		    [0, -190]
+	    ZOrder		    104
+	    Points		    [0, -200]
 	    DstBlock		    "Get Fz_bodyframe"
 	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    41
-	    Points		    [0, 20]
+	    Points		    [0, 10]
 	    DstBlock		    "Trim Kinematics (euler angles)"
 	    DstPort		    1
 	  }
@@ -6266,15 +6325,24 @@ Model {
 	  ZOrder		  43
 	  SrcBlock		  "Cularis aerodynamics"
 	  SrcPort		  1
-	  Points		  [25, 0; 0, -10]
-	  DstBlock		  "Add"
-	  DstPort		  1
+	  Points		  [23, 0]
+	  Branch {
+	    ZOrder		    108
+	    Points		    [0, -35]
+	    DstBlock		    "FMaero_bf"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    107
+	    DstBlock		    "Add"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  48
 	  SrcBlock		  "Cularis aerodynamics"
 	  SrcPort		  3
-	  Points		  [19, 0; 0, 80]
+	  Points		  [19, 0; 0, 50]
 	  DstBlock		  "Terminator"
 	  DstPort		  1
 	}
@@ -6335,14 +6403,13 @@ Model {
 	  SrcPort		  1
 	  Points		  [81, 0]
 	  Branch {
-	    ZOrder		    58
-	    Points		    [0, -130]
+	    ZOrder		    106
+	    Points		    [0, -165]
 	    DstBlock		    "Bus Selector"
 	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    57
-	    Points		    [47, 0; 0, 35]
 	    DstBlock		    "Cularis aerodynamics"
 	    DstPort		    1
 	  }
@@ -6369,9 +6436,17 @@ Model {
 	  ZOrder		  73
 	  SrcBlock		  "Electric propulsion"
 	  SrcPort		  1
-	  Points		  [95, 0; 0, 180]
+	  Points		  [95, 0; 0, 190]
 	  DstBlock		  "Add"
 	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  105
+	  SrcBlock		  "Cularis aerodynamics"
+	  SrcPort		  4
+	  Points		  [7, 0; 0, 60]
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
 	}
       }
     }
@@ -6921,6 +6996,66 @@ Model {
       Port		      "21"
       IconDisplay	      "Port number"
     }
+    Block {
+      BlockType		      Outport
+      Name		      "FMaero_bf_Fx"
+      SID		      "1178"
+      Position		      [2075, 1835, 2115, 1855]
+      ZOrder		      1473
+      Port		      "22"
+      IconDisplay	      "Port number"
+      PortDimensions	      "1"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "FMaero_bf_Fy"
+      SID		      "1179"
+      Position		      [2075, 1890, 2115, 1910]
+      ZOrder		      1474
+      Port		      "23"
+      IconDisplay	      "Port number"
+      PortDimensions	      "1"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "FMaero_bf_Fz"
+      SID		      "1180"
+      Position		      [2075, 1945, 2115, 1965]
+      ZOrder		      1475
+      Port		      "24"
+      IconDisplay	      "Port number"
+      PortDimensions	      "1"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "FMaero_bf_Mx"
+      SID		      "1181"
+      Position		      [2075, 2000, 2115, 2020]
+      ZOrder		      1476
+      Port		      "25"
+      IconDisplay	      "Port number"
+      PortDimensions	      "1"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "FMaero_bf_My"
+      SID		      "1182"
+      Position		      [2075, 2055, 2115, 2075]
+      ZOrder		      1477
+      Port		      "26"
+      IconDisplay	      "Port number"
+      PortDimensions	      "1"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "FMaero_bf_Mz"
+      SID		      "1183"
+      Position		      [2075, 2110, 2115, 2130]
+      ZOrder		      1478
+      Port		      "27"
+      IconDisplay	      "Port number"
+      PortDimensions	      "1"
+    }
     Line {
       Name		      "den_0to1"
       ZOrder		      1
@@ -7027,7 +7162,7 @@ Model {
       ZOrder		      47
       SrcBlock		      "Dynamics with varying parameters"
       SrcPort		      2
-      Points		      [90, 0]
+      Points		      [0, 10; 90, 0]
       Branch {
 	ZOrder			148
 	Points			[0, 165]
@@ -7173,7 +7308,7 @@ Model {
       ZOrder		      152
       SrcBlock		      "Dynamics with varying parameters"
       SrcPort		      3
-      Points		      [43, 0; 0, 520; 349, 0]
+      Points		      [43, 0; 0, 540; 349, 0]
       Branch {
 	ZOrder			198
 	Points			[0, 595]
@@ -7362,6 +7497,56 @@ Model {
       SrcBlock		      "Demux4"
       SrcPort		      3
       DstBlock		      "nz"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      229
+      SrcBlock		      "Dynamics with varying parameters"
+      SrcPort		      4
+      Points		      [19, 0; 0, 1415]
+      DstBlock		      "Demux5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      230
+      SrcBlock		      "Demux5"
+      SrcPort		      1
+      DstBlock		      "FMaero_bf_Fx"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      231
+      SrcBlock		      "Demux5"
+      SrcPort		      2
+      DstBlock		      "FMaero_bf_Fy"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      232
+      SrcBlock		      "Demux5"
+      SrcPort		      3
+      DstBlock		      "FMaero_bf_Fz"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      233
+      SrcBlock		      "Demux5"
+      SrcPort		      4
+      DstBlock		      "FMaero_bf_Mx"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      235
+      SrcBlock		      "Demux5"
+      SrcPort		      5
+      DstBlock		      "FMaero_bf_My"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      236
+      SrcBlock		      "Demux5"
+      SrcPort		      6
+      DstBlock		      "FMaero_bf_Mz"
       DstPort		      1
     }
   }

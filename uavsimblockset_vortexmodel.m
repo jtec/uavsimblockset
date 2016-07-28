@@ -1,17 +1,11 @@
-function [Vi_bfrozen, omegai_bfrozen, Vi_NED, p0_filament_left, p0_filament_right, dcm_ew] = uavsimblockset_vortexmodel(pNED, ...
-    vNED, ...
-    CL, ...
-    qAttitude, ...
-    alpha, ...
-    beta, ...
-    p, ...
-    tsim, ...
-    VortexSig)
+function [Vi_bfrozen, omegai_bfrozen, Vi_NED, p0_filament_left, p0_filament_right, dcm_ew, debugport] = uavsimblockset_vortexmodel(...
+        ID, ...
+        tsim, ...
+        VortexSig)
 
 % Tag indicating that this function is Embedded Matlab:
 %#codegen
-
-ID = p.id;
+debugport = zeros(10,1);
 stack.vi_center_NED = [0 0 0]';
 stack.vi_eff_b = [0 0 0]';
 stack.omegai_eff_b = [0 0 0]';
@@ -51,6 +45,8 @@ stack.DCM_ew_this = stack.DCM_eb_this * stack.DCM_bw_this;
 
 % Select VortexSig that have a relevant impact on this one:
 [relevantUAS, n_relevantUAS] = selectDominantUASs(ID, VortexSig, stack);
+debugport(1) = n_relevantUAS;
+
 if n_relevantUAS > 0
     relevantUAS = relevantUAS(1:n_relevantUAS);
     for j=1:length(relevantUAS)
@@ -87,20 +83,21 @@ if n_relevantUAS > 0
                 if ~isfield(VortexSig(ID), 'checkpoints')
                     stack.checkpoints.center = [0 0 0]';
                     stack.checkpoints.nose = VortexSig(ID).pNose_b_m;
-                    stack.checkpoints.rear = VortexSig(ID).pNose_b_m + [-VortexSig(ID).longiRefLength_m 0 0]';
+                    stack.checkpoints.rear = VortexSig(ID).pRear_b_m;
                     stack.checkpoints.leftwingtip = getWingPoint(VortexSig(ID),  0.5 * maximoleader.b_m, -1);
                     stack.checkpoints.rightwingtip = getWingPoint(VortexSig(ID),  0.5 * maximoleader.b_m, 1);
                     stack.checkpoints.fintip = VortexSig(ID).posFinTip_b_m;
-                    stack.checkpoints.finbottom = VortexSig(ID).posFinTip_b_m + [0 0 -VortexSig(ID).verticalRefLength_m]';
+                    stack.checkpoints.finbottom = VortexSig(ID).posFuselageBottom_b_m;
                     % Compute unit vectors pointing along the wing:
                     stack.leftwingvector = fflib_normalize(stack.checkpoints.leftwingtip);
                     stack.rightwingvector = fflib_normalize(stack.checkpoints.rightwingtip);
+                    VortexSig(ID).checkpoints = stack.checkpoints;
                 end
                 [test, stack.vi_center_NED]= getVi(stack.checkpoints.center, ...
                     VortexSig(ID), maximoleader, ...
                     stack);
                 
-                debugos = false;
+                debugos = true;
                 if debugos
                     computeInducedV(ID, VortexSig, stack, maximoleader);
                 end
@@ -124,7 +121,7 @@ p0_leftFilament_NED = body2NED(p0_leftFilament_b, VortexSig(ID).p_NED_m, VortexS
 p0_filament_right = p0_rightFilament_NED;
 p0_filament_left = p0_leftFilament_NED;
 dcm_ew = stack.DCM_ew_this;
-if tsim > 1
+if tsim > 1 && ID == 3
     bp = 0;
 end
 end
@@ -153,6 +150,7 @@ stack_out.vi_eff_b(3) = 1/4 * (vi_center2rear(3) ...
     + vi_center2nose(3) ...
     + vi_center2rightwingtip(3) ...
     + vi_center2leftwingtip(3));
+bp=0;
 end
 
 % Computes the average induced velocity over one airframe segment
@@ -187,32 +185,39 @@ vi_alongtherightwing = distribution(VortexSig(ID),[0 0 0]', - stack.rightwingvec
 vi_alongthewing = [vi_alongtheleftwing vi_alongtherightwing];
 %
 % % Piotr:
+figure(84)
 subplot(3,2,1)
 plot(vi_alongthewing(1,:), vi_alongthewing(2,:) );
 title('Wx along the wing')
-axis([-4,4,-0.4,0.3]);
+grid on;
+%axis([-4,4,-0.4,0.3]);
 subplot(3,2,2)
 plot(vi_alongBodyZ(1,:), vi_alongBodyZ(2,:) );
 title('Wx along body z')
-axis([-2,2,-0.01,0.06]);
+%axis([-2,2,-0.01,0.06]);
+grid on;
 
 subplot(3,2,3)
 plot(vi_alongBodyX(1,:), vi_alongBodyX(3,:) );
 title('Wy along body x')
-axis([-60,20,-0.2,0.3]);
+%axis([-60,20,-0.2,0.3]);
+grid on;
 subplot(3,2,4)
 plot(vi_alongBodyZ(1,:), vi_alongBodyZ(3,:) );
 title('Wy along body z')
-axis([-2,2,-0.4,0.3]);
+%axis([-2,2,-0.4,0.3]);
+grid on;
 
 subplot(3,2,5)
 plot(vi_alongBodyX(1,:), vi_alongBodyX(4,:) );
 title('Wz along body x')
-axis([-60,20,-0.4,0.1]);
+%axis([-60,20,-0.4,0.1]);
+grid on;
 subplot(3,2,6)
 plot(vi_alongthewing(1,:), vi_alongthewing(4,:) );
 title('Wz along the wing')
-axis([-4,4,-1.5,2.5]);
+%axis([-4,4,-1.5,2.5]);
+grid on;
 
 drawnow;
 end
@@ -222,7 +227,7 @@ end
 % a range.
 function vi_dist = distribution(inducee, p0, u, r, stack, inducer)
 % Generate evenly spaced points:
-div = 10;
+div = 100;
 steps = zeros(div+1, 1);
 steps = ffb_linspace(r(1),r(2), div);
 vi_dist = zeros(4,length(steps));
@@ -254,7 +259,7 @@ end
 % the wing tips for an aircraft featuring dihedral and sweep angle.
 function p = getWingPoint(ac, r, hlfpl)
 % Compute unit vector pointing from the origin to the wing tip:
-wingvector = ffb_angle2dcm((hlfpl)*ac.sweep_rad, (hlfpl)*ac.dihedral_rad, 0, 'ZXY')' * [0 hlfpl 0]';
+wingvector = ffb_angle2dcm((hlfpl)*ac.sweep_rad, (hlfpl)*ac.dihedral_rad, 0)' * [0 hlfpl 0]';
 p = wingvector * r;
 end
 
@@ -275,7 +280,7 @@ p_wleader = fflib_frame2frame(p_bfollower, d_wleader, ffb_dcm2quat(stack.DCM_win
 % filament:
 % Get induced velocities:
 vi_wleader = computeVi(p_wleader, stack.p0_leftFilament_wleader, [1 0 0]', leader, d_wleader) ...
-    + computeVi(p_wleader, stack.p0_rightFilament_wleader, [-1 0 0]', leader, d_wleader);
+    + 0*computeVi(p_wleader, stack.p0_rightFilament_wleader, [-1 0 0]', leader, d_wleader);
 vi_b = stack.DCM_windLeader2bodyFollower * vi_wleader;
 vi_NED = stack.DCM_be_follower' * vi_b;
 end
@@ -318,32 +323,22 @@ end
 function [indices, n] = selectDominantUASs(ID, VortexSig, stack)
 % Figure out how many active UAS there are by finding zero fields in the
 % shared state:
-nUAS = length(VortexSig);
-for k=1:length(VortexSig)
-    if VortexSig(k).timeOfLastUpdate < eps
-        nUAS = k-1;
-        break;
-    end
-end
-% Check for each other UAS is it is in front of this one:
 n = 0;
 indices = zeros(10,1);
-if nUAS > 2
-    % The index one is a virtual leader, ignore:
-    for k=2:nUAS
-        if k ~= ID
-            dp_e = VortexSig(k).p_NED_m - VortexSig(ID).p_NED_m;
-            if ID == 3 && VortexSig(ID).timeOfLastUpdate > 0.1;
-                bp = 0;
-            end
-            % rotate to this UAS's wind frame:
-            dp_w = stack.DCM_ew_this' * dp_e;
-            if dp_w(3) > 0
-                n = n + 1;
-                indices(n) = k;
-            end
+for k=1:length(VortexSig)
+    if (VortexSig(k).timeOfLastUpdate > eps) && (k ~= ID)
+        % Check whether the UAS is in front of this one:
+        dp_e = VortexSig(k).p_NED_m - VortexSig(ID).p_NED_m;
+        % rotate to this UAS's wind frame:
+        dp_w = stack.DCM_ew_this' * dp_e;
+        if dp_w(1) > 0
+            n = n + 1;
+            indices(n) = k;
         end
     end
+    
 end
-n = 0;
+if n < 1 && ID == 3
+    bp = 0;
+end
 end
