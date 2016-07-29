@@ -99,7 +99,7 @@ if n_relevantUAS > 0
                     VortexSig(ID), maximoleader, ...
                     stack);
                 
-                debugos = true;
+                debugos = false;
                 if debugos
                     computeDistributions(ID, VortexSig, stack, maximoleader);
                 end
@@ -152,7 +152,7 @@ stack_out.vi_eff_b(3) = 1/4 * (vi_center2rear(3) ...
     + vi_center2nose(3) ...
     + vi_center2rightwingtip(3) ...
     + vi_center2leftwingtip(3));
-bp=0;
+
 end
 
 % Computes the average induced velocity over one airframe segment
@@ -307,7 +307,8 @@ rc = 2.24 * sqrt(empiricalNu * tau);
 % point, i.e. the distance in the wind frame's yz plane:
 dfp = p_wleader - p0_filament_wleader;
 rr = norm(dfp(2:3));
-vi_wleader = (vortexStrength/(2*pi*rr)) * (1 - exp(-1.26 * (rr/rc)^2));
+%vi_wleader = (vortexStrength/(2*pi*rr)) * (1 - exp(-1.26 * (rr/rc)^2));
+vi_wleader = (vortexStrength/(2*pi)) * rr/(rr^2 + rc^2);
 % Get unit vector pointing in the direction of the induced
 % flow:
 v_radius_wleader = [0; dfp(2:3, :)];
