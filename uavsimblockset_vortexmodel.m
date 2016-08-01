@@ -1,7 +1,9 @@
+% Based on "Modeling of Aerodynamic Coupling Between Aircraft in Close
+% Proximity", Dogan et al.
 function [Vi_bfrozen, omegai_bfrozen, Vi_NED, p0_filament_left, p0_filament_right, dcm_ew, debugport] = uavsimblockset_vortexmodel(...
-        ID, ...
-        tsim, ...
-        VortexSig)
+    ID, ...
+    tsim, ...
+    VortexSig)
 
 % Tag indicating that this function is Embedded Matlab:
 %#codegen
@@ -42,6 +44,9 @@ this = VortexSig(ID);
 stack.DCM_bw_this = ffb_dcmbody2wind(this.alpha_rad, this.beta_rad)';
 stack.DCM_eb_this = ffb_quat2dcm(this.qAttitude')';
 stack.DCM_ew_this = stack.DCM_eb_this * stack.DCM_bw_this;
+
+% How many samples to use for averaging:
+stack.n_averagesamples = 10;
 
 % Select VortexSig that have a relevant impact on this one:
 [relevantUAS, n_relevantUAS] = selectDominantUASs(ID, VortexSig, stack);
@@ -99,7 +104,7 @@ if n_relevantUAS > 0
                     VortexSig(ID), maximoleader, ...
                     stack);
                 
-                debugos = false;
+                debugos = true;
                 if debugos
                     computeDistributions(ID, VortexSig, stack, maximoleader);
                 end
@@ -130,38 +135,118 @@ end
 
 % Computes the average induced velocity and índuced body rotation rates:
 function stack_out = computeEffectiveVAndOmega(VortexSig, ID, maximoleader, stack_in)
+stack_out = stack_in;
+this = VortexSig(ID);
+% Best fit approach from the article:
+% Weighting functions normalized for a range of 0 to 1:
+ds = ffb_linspace(0,1,stack_out.n_averagesamples);
+Lf = norm(this.pRear_b_m - this.pNose_b_m);
+Df = norm(this.posFuselageBottom_b_m - this.posFinTip_b_m);
+b = this.b_m;
+fxy = zeros(size(ds));
+fzy = fxy;
+fxz = fxy;
+for k=1:stack_out.n_averagesamples
+    fxy(k) = ds(k)*norm(cos(this.dihedral_rad)*cos(this.sweep_rad))/(3*Lf/4);
+    fzy(k) = ds(k)*norm(cos(this.dihedral_rad)*cos(this.sweep_rad))/(b/2);
+    fxz(k) = ds(k)/(3*Lf/4);
+    fxz(k) = ds(k)/(b/2);
+    fz1x =  fxz;
+    fy1x =  fxz;
+    fz2x =  fxz;
+    fy2x =  fxz;
+end
+Wx1y = (b/2)*weightedaverage([0 -b/2 0]', [0 0 0]', VortexSig, ID, maximoleader, stack_in,  fxy ,1);
+Wx2y = (b/2)*weightedaverage([0 0 0]', [0 b/2 0]', VortexSig, ID, maximoleader, stack_in,  fxy, 1);
+Wx1z = (Df/2)*weightedaverage([0 0 -Df/2]', [0 0 0]', VortexSig, ID, maximoleader, stack_in,  fxz, 1);
+Wx2z = (Df/2)*weightedaverage([0 0 0]', [0 0 Df/2]', VortexSig, ID, maximoleader, stack_in,  fxz, 1);
+% Ok, this is too fucked up, dropping this shit. Comparison can be done
+% anyway.
+
 vi_center2nose = average(stack_in.checkpoints.center, stack_in.checkpoints.nose, VortexSig, ID, maximoleader, stack_in);
 vi_center2rear = average(stack_in.checkpoints.center, stack_in.checkpoints.rear, VortexSig, ID, maximoleader, stack_in);
 vi_center2rightwingtip = average(stack_in.checkpoints.center, stack_in.checkpoints.rightwingtip, VortexSig, ID, maximoleader, stack_in);
 vi_center2leftwingtip = average(stack_in.checkpoints.center, stack_in.checkpoints.leftwingtip, VortexSig, ID, maximoleader, stack_in);
 vi_center2fintip = average(stack_in.checkpoints.center, stack_in.checkpoints.fintip, VortexSig, ID, maximoleader, stack_in);
 vi_center2finbottom = average(stack_in.checkpoints.center, stack_in.checkpoints.finbottom, VortexSig, ID, maximoleader, stack_in);
+Vi_averaged = 1/4 * (vi_center2nose ...
+    + vi_center2rear ...
+    + vi_center2fintip ...
+    + vi_center2finbottom);
 
-stack_out = stack_in;
-stack_out.vi_eff_b(1) = 1/4 * (vi_center2rightwingtip(1) ...
-    + vi_center2leftwingtip(1) ...
-    + vi_center2fintip(1) ...
-    + vi_center2finbottom(1));
+% Least squares approach: fit angular rates and average induced velocity to
+% pointwise induced velocity vectors
+vi_alongBodyX = distribution(VortexSig(ID), [0 0 0]', [1 0 0]', [-Lf/2, Lf/2], stack_in, maximoleader);
+vi_alongBodyY = distribution(VortexSig(ID),[0 -b/2 0]', [0 1 0]' , [0 b], stack_in, maximoleader);
+vi_alongBodyZ = distribution(VortexSig(ID),[0 0 0]', [0 0 1]', [-Df/2, Df/2]', stack_in, maximoleader);
+% Start with average induced velocity:
+data = [vi_alongBodyX vi_alongBodyY vi_alongBodyZ];
+y = data(2:4, :);
+y = reshape(y, [], 1);
+A = repmat(eye(3), length(y)/3, 1);
+Vi_lsq = (A'*A)^-1*A'*y;
+% Now angular rates:
+% The A matrix now indicates how angular rates generate induced velocities:
+ps = data(5:7, :);
+for k=1:size(ps, 2);
+    p = ps(:, k);
+    rw = 1+(k-1)*3;
+    A(rw:rw+2, :) = [0 -p(3) p(2); 
+                       p(3) 0 -p(1);
+                       -p(2) p(1) 0];
+end
+omegai_lsq = (A'*A)^-1*A'*y;
 
-stack_out.vi_eff_b(2) = 1/4 * (vi_center2nose(2) ...
-    + vi_center2rear(2) ...
-    + vi_center2fintip(2) ...
-    + vi_center2finbottom(2));
+%stack_out.vi_eff_b = Vi_averaged;
+stack_out.vi_eff_b = Vi_lsq;
+stack_out.omegai_eff_b = omegai_lsq;
+end
 
-stack_out.vi_eff_b(3) = 1/4 * (vi_center2rear(3) ...
-    + vi_center2nose(3) ...
-    + vi_center2rightwingtip(3) ...
-    + vi_center2leftwingtip(3));
 
+% Computes the induced velocity distribution over one airframe
+% segment defined by a point in the body frame, a unit vector and
+% a range.
+function vi_dist= distribution(inducee, p0, u, r, stack, inducer)
+% Generate evenly spaced points:
+div = 100;
+steps = zeros(div+1, 1);
+steps = ffb_linspace(r(1),r(2), div);
+vi_dist = zeros(7,length(steps));
+for i=1:length(steps);
+    p = p0 + steps(i) * u;
+    [vi_dist(2:4, i), ~] = getVi(p, inducee, inducer, stack);
+    vi_dist(5:7, i) = p;
+    vi_dist(1, i) = steps(i);
+end
+end
+
+% Computes the average induced velocity over one airframe segment
+% by integrating between two checkpoints in the body frame.
+function vi_av_ax = weightedaverage(p1, p2, VortexSig, ID, maximoleader, stack, f, axis)
+% Generate evenly spaced integration points:
+l = norm(p1-p2);
+steps = zeros(stack.n_averagesamples,1);
+div = length(steps);
+for k=2:div
+    steps(k) = steps(k-1) + (l/div);
+end
+unit_p1top2 = fflib_normalize(p2-p1);
+vi_av = zeros(3,1);
+for i=1:length(steps);
+    p = p1 + steps(i) * unit_p1top2;
+    [vi_atPoint_b, ~] = getVi(p, VortexSig(ID), maximoleader, stack);
+    vi_av = vi_av + vi_atPoint_b*(1+steps(i)*f(i));
+end
+vi_av = vi_av ./ length(steps);
+vi_av_ax = vi_av(axis);
 end
 
 % Computes the average induced velocity over one airframe segment
 % by integrating between two checkpoints in the body frame.
 function vi_av = average(p1, p2, VortexSig, ID, maximoleader, stack)
 % Generate evenly spaced integration points:
-ds = 0.1;
 l = norm(p1-p2);
-steps = zeros(10,1);
+steps = zeros(stack.n_averagesamples,1);
 div = length(steps);
 for k=2:div
     steps(k) = steps(k-1) + (l/div);
@@ -226,24 +311,6 @@ grid on;
 drawnow;
 end
 
-% Computes the induced velocity distribution over one airframe
-% segment defined by a point in the body frame, a unit vector and
-% a range.
-function vi_dist = distribution(inducee, p0, u, r, stack, inducer)
-% Generate evenly spaced points:
-div = 100;
-steps = zeros(div+1, 1);
-steps = ffb_linspace(r(1),r(2), div);
-vi_dist = zeros(4,length(steps));
-ps = zeros(3,length(steps));
-for i=1:length(steps);
-    p = p0 + steps(i) * u;
-    [vi_dist(2:4, i), ~] = getVi(p, inducee, inducer, stack);
-    ps(:, i) = p;
-    vi_dist(1, i) = steps(i);
-end
-end
-
 % Generates an array of evenly spaced points between two given scalars a
 % and b, for which b > a.
 function lspace = ffb_linspace(a, b, n)
@@ -275,7 +342,7 @@ function [vi_b, vi_NED]= getVi(p_bfollower, follower, leader, stack)
 % First compute position of the follower's body frame in the
 % leader's wind frame.
 % Relative position vector between leader the point of interest in the NED
-% frame: 
+% frame:
 d_NED =  body2NED(p_bfollower, follower.p_NED_m, follower.qAttitude) - leader.p_NED_m;
 % Rotate to the leader's wind frame:
 p_wleader = stack.DCM_ew_leader' * d_NED;
