@@ -5,8 +5,6 @@ function [Vi_bfrozen, omegai_bfrozen, Vi_NED, p0_filament_left, p0_filament_righ
     tsim, ...
     VortexSig)
 
-% Tag indicating that this function is Embedded Matlab:
-%#codegen
 debugport = zeros(10,1);
 stack.vi_center_NED = [0 0 0]';
 stack.vi_eff_b = [0 0 0]';
@@ -39,14 +37,15 @@ stack.p0_leftFilament_wleader = zeros(3,1);
 stack.p0_rightFilament_bleader = zeros(3,1);
 stack.p0_leftFilament_bleader = zeros(3,1);
 
+% How many samples to use for averaging:
+stack.n_averagesamples = 10;
+stack.winglength = 0;
+
 % Compute necessary rotation matrices:
 this = VortexSig(ID);
 stack.DCM_bw_this = ffb_dcmbody2wind(this.alpha_rad, this.beta_rad)';
 stack.DCM_eb_this = ffb_quat2dcm(this.qAttitude')';
 stack.DCM_ew_this = stack.DCM_eb_this * stack.DCM_bw_this;
-
-% How many samples to use for averaging:
-stack.n_averagesamples = 10;
 
 % Select VortexSig that have a relevant impact on this one:
 [relevantUAS, n_relevantUAS] = selectDominantUASs(ID, VortexSig, stack);
@@ -77,7 +76,6 @@ if n_relevantUAS > 0
                 % Compute source points of vortex filaments:
                 % unit vector that points from the wind frame's origin to the right
                 % wing tip:
-                % TODO Handling of b not entirely correct.
                 stack.p0_rightFilament_bleader = getWingPoint(maximoleader,  0.5 * maximoleader.b_m * pi/4, 1);
                 stack.p0_rightFilament_wleader = stack.DCM_bw_leader' * stack.p0_rightFilament_bleader;
                 % The same procedure for the left wing:

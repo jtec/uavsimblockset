@@ -207,7 +207,7 @@ Model {
       BusOutputAsStruct	      "off"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1633"
+    ComputedModelVersion    "1.1645"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -286,9 +286,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "j.bolting"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jul 26 13:47:14 2016"
-  RTWModifiedTimeStamp	  391441630
-  ModelVersionFormat	  "1.%<AutoIncrement:1633>"
+  LastModifiedDate	  "Sun Jan 15 12:08:39 2017"
+  RTWModifiedTimeStamp	  406382910
+  ModelVersionFormat	  "1.%<AutoIncrement:1645>"
   ConfigurationManager	  "none"
   SampleTimeColors	  on
   SampleTimeAnnotations	  off

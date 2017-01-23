@@ -18,7 +18,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-1536.0, 0.0, 1540.0, 868.0]
+      Location		      [-3.0, 0.0, 1541.0, 940.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,9 +42,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1874.0, 902.0]
-	ZoomFactor		[0.8]
-	Offset			[-2.5, 0.0]
+	Extents			[1876.0, 992.0]
+	ZoomFactor		[1.2499999999999998]
+	Offset			[1064.4403746234011, 30.650089104722497]
       }
     }
   }
@@ -54,9 +54,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "j.bolting"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 07 14:27:38 2016"
-  RTWModifiedTimeStamp	  387065297
-  ModelVersionFormat	  "1.%<AutoIncrement:1270>"
+  LastModifiedDate	  "Mon Jan 23 14:41:46 2017"
+  RTWModifiedTimeStamp	  407083296
+  ModelVersionFormat	  "1.%<AutoIncrement:1275>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -848,6 +848,12 @@ Library {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      ManualSwitch
+      CurrentSetting	      "1"
+      varsize		      off
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Math
       Operator		      "exp"
       OutputSignalType	      "auto"
@@ -1054,8 +1060,8 @@ Library {
   }
   System {
     Name		    "uavsimblockset"
-    Location		    [-1536, 0, 4, 868]
-    Open		    off
+    Location		    [-3, 0, 1538, 940]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1066,9 +1072,9 @@ Library {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5230"
+    SIDHighWatermark	    "5251"
     Block {
       BlockType		      Reference
       Name		      "(alpha beta Va) to (u v w)"
@@ -1151,7 +1157,7 @@ Library {
       ZOrder		      2001
       ForegroundColor	      "red"
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.1270"
+      LibraryVersion	      "*1.1270"
       RequestExecContextInheritance off
       Variant		      off
       Object {
@@ -1170,7 +1176,7 @@ Library {
       }
       System {
 	Name			"Closed loop Cularis UAS 1"
-	Location		[0, 0, 1344, 933]
+	Location		[0, 0, 1344, 932]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1217,7 +1223,7 @@ Library {
 	  }
 	  System {
 	    Name		    "Controllers"
-	    Location		    [0, 0, 1344, 933]
+	    Location		    [0, 0, 1344, 932]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1229,7 +1235,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "AirframeBus"
@@ -2740,7 +2746,7 @@ Library {
 	      Variant		      off
 	      System {
 		Name			"Compute error \nmeasures"
-		Location		[-1539, -3, 3, 867]
+		Location		[0, 0, 1344, 932]
 		Open			off
 		ModelBrowserVisibility	off
 		ModelBrowserWidth	200
@@ -2752,7 +2758,7 @@ Library {
 		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"100"
+		ZoomFactor		"175"
 		Block {
 		  BlockType		  Inport
 		  Name			  "DCM_eg"
@@ -2830,31 +2836,31 @@ Library {
 		    TiledPageScale	    1
 		    ShowPageBoundaries	    off
 		    ZoomFactor		    "100"
-		    SIDHighWatermark	    "184"
+		    SIDHighWatermark	    "198"
 		    Block {
 		    BlockType		    Demux
 		    Name		    " Demux "
-		    SID			    "5205::182"
+		    SID			    "5205::196"
 		    Ports		    [1, 1]
 		    Position		    [270, 230, 320, 270]
-		    ZOrder		    141
+		    ZOrder		    149
 		    Outputs		    "1"
 		    }
 		    Block {
 		    BlockType		    Ground
 		    Name		    " Ground "
-		    SID			    "5205::184"
+		    SID			    "5205::198"
 		    Position		    [20, 131, 40, 149]
-		    ZOrder		    143
+		    ZOrder		    151
 		    }
 		    Block {
 		    BlockType		    S-Function
 		    Name		    " SFunction "
-		    SID			    "5205::181"
+		    SID			    "5205::195"
 		    Tag			    "Stateflow S-Function uavsimblockset 4"
 		    Ports		    [1, 3]
 		    Position		    [180, 100, 230, 180]
-		    ZOrder		    140
+		    ZOrder		    148
 		    FunctionName	    "sf_sfun"
 		    Parameters		    "closedloopmask_ID"
 		    PortCounts		    "[1 3]"
@@ -2876,9 +2882,9 @@ Library {
 		    Block {
 		    BlockType		    Terminator
 		    Name		    " Terminator "
-		    SID			    "5205::183"
+		    SID			    "5205::197"
 		    Position		    [460, 241, 480, 259]
-		    ZOrder		    142
+		    ZOrder		    150
 		    }
 		    Block {
 		    BlockType		    Outport
@@ -4551,31 +4557,31 @@ Library {
 		    TiledPageScale	    1
 		    ShowPageBoundaries	    off
 		    ZoomFactor		    "100"
-		    SIDHighWatermark	    "182"
+		    SIDHighWatermark	    "195"
 		    Block {
 		    BlockType		    Demux
 		    Name		    " Demux "
-		    SID			    "5042::180"
+		    SID			    "5042::193"
 		    Ports		    [1, 1]
 		    Position		    [270, 230, 320, 270]
-		    ZOrder		    156
+		    ZOrder		    164
 		    Outputs		    "1"
 		    }
 		    Block {
 		    BlockType		    Ground
 		    Name		    " Ground "
-		    SID			    "5042::182"
+		    SID			    "5042::195"
 		    Position		    [20, 121, 40, 139]
-		    ZOrder		    158
+		    ZOrder		    166
 		    }
 		    Block {
 		    BlockType		    S-Function
 		    Name		    " SFunction "
-		    SID			    "5042::179"
+		    SID			    "5042::192"
 		    Tag			    "Stateflow S-Function uavsimblockset 2"
 		    Ports		    [1, 2]
 		    Position		    [180, 100, 230, 160]
-		    ZOrder		    155
+		    ZOrder		    163
 		    FunctionName	    "sf_sfun"
 		    Parameters		    "closedloopmask_ID"
 		    PortCounts		    "[1 2]"
@@ -4591,9 +4597,9 @@ Library {
 		    Block {
 		    BlockType		    Terminator
 		    Name		    " Terminator "
-		    SID			    "5042::181"
+		    SID			    "5042::194"
 		    Position		    [460, 241, 480, 259]
-		    ZOrder		    157
+		    ZOrder		    165
 		    }
 		    Block {
 		    BlockType		    Outport
@@ -5258,7 +5264,7 @@ Library {
 		  Ports			  [14, 0, 1]
 		  Position		  [635, 403, 765, 807]
 		  ZOrder		  1113
-		  LibraryVersion	  "1.1149"
+		  LibraryVersion	  "1.1150"
 		  SourceBlock		  "uavsimBlockset_UAV3DInterface/UAV3D interface"
 		  SourceType		  ""
 		  ContentPreviewEnabled	  off
@@ -5806,7 +5812,7 @@ Library {
 	  ZOrder		  1950
 	  ForegroundColor	  "red"
 	  BackgroundColor	  "yellow"
-	  LibraryVersion	  "1.1173"
+	  LibraryVersion	  "1.1174"
 	  SourceBlock		  "uavsimBlockset_Cularis_withUAV3D/UAV A"
 	  SourceType		  ""
 	  ContentPreviewEnabled	  off
@@ -5885,7 +5891,7 @@ Library {
       Position		      [260, -18, 575, 138]
       ZOrder		      1457
       ForegroundColor	      "red"
-      LibraryVersion	      "*1.1269"
+      LibraryVersion	      "*1.1274"
       RequestExecContextInheritance off
       Variant		      off
       Object {
@@ -5946,7 +5952,7 @@ Library {
       }
       System {
 	Name			"Cularis UAS"
-	Location		[-1538, 0, 3, 869]
+	Location		[-1344, 0, -247, 840]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5958,12 +5964,12 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"150"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "u - system inputs"
 	  SID			  "4551"
-	  Position		  [210, 198, 240, 212]
+	  Position		  [160, 188, 190, 202]
 	  ZOrder		  1163
 	  IconDisplay		  "Port number"
 	  OutDataTypeStr	  "Bus: CMD"
@@ -5988,18 +5994,26 @@ Library {
 	  IconDisplay		  "Port number"
 	}
 	Block {
+	  BlockType		  ManualSwitch
+	  Name			  "Actuator dynamics\nneglected?"
+	  SID			  "5251"
+	  Position		  [465, 104, 505, 226]
+	  ZOrder		  2427
+	  CurrentSetting	  "0"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "Cularis actuators - time behaviour"
 	  SID			  "4619"
 	  Ports			  [1, 1]
-	  Position		  [290, 176, 490, 234]
+	  Position		  [240, 106, 440, 164]
 	  ZOrder		  1470
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Cularis actuators - time behaviour"
-	    Location		    [-1538, 0, 3, 869]
+	    Location		    [-1344, 0, -357, 840]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6011,7 +6025,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "175"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "computed inputs"
@@ -6101,12 +6115,49 @@ Library {
 	      }
 	    }
 	    Block {
+	      BlockType		      Reference
+	      Name		      "Radians\nto Degrees"
+	      SID		      "5249"
+	      Ports		      [1, 1]
+	      Position		      [935, 240, 965, 270]
+	      ZOrder		      1416
+	      LibraryVersion	      "1.44"
+	      SourceBlock	      "simulink_extras/Transformations/Radians\nto Degrees"
+	      SourceType	      "RadiansToDegrees"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
 	      BlockType		      RateTransition
 	      Name		      "Rate Transition"
 	      SID		      "4845"
 	      Position		      [735, 609, 775, 651]
 	      ZOrder		      1041
 	      Integrity		      off
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Scope"
+	      SID		      "5248"
+	      Ports		      [1]
+	      Position		      [1045, 209, 1075, 241]
+	      ZOrder		      1415
+	      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(ext"
+	      "mgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration("
+	      "'Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Dom"
+	      "ain',true,'SerializedDisplays',{struct('MinYLimReal','-1.84829','MaxYLimReal','-0.59469','YLabelReal','','MinYL"
+	      "imMag','0.00000','MaxYLimMag','1.84829','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false"
+	      ",'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 "
+	      "0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.39215686274509"
+	      "8 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098"
+	      "039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}}"
+	      ",'NumLines',1,'LineNames',{{'Radians to Degrees'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults'"
+	      ",struct('MinYLimReal','-1.84829','MaxYLimReal','-0.59469','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','"
+	      "1.84829','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickC"
+	      "olor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.62352941176470"
+	      "6 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3921568"
+	      "62745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),"
+	      "extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configu"
+	      "ration('Tools','Measurements',true,'Version','2015b')),'Version','2015b','Position',[-667.8 3.4 665.6 768])"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -6254,13 +6305,21 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1
+	      SrcBlock		      "Radians\nto Degrees"
+	      SrcPort		      1
+	      Points		      [56, 0; 0, -30]
+	      DstBlock		      "Scope"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
 	      SrcBlock		      "Servo HS55"
 	      SrcPort		      2
 	      DstBlock		      "Terminator3"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      2
+	      ZOrder		      3
 	      SrcBlock		      "Servo HS1"
 	      SrcPort		      2
 	      Points		      [5, 0]
@@ -6269,7 +6328,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "den_0to1"
-	      ZOrder		      3
+	      ZOrder		      4
 	      Labels		      [1, 1]
 	      SrcBlock		      "First order behaviour\nengine"
 	      SrcPort		      1
@@ -6277,14 +6336,14 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      4
+	      ZOrder		      5
 	      SrcBlock		      "Servo HS3"
 	      SrcPort		      2
 	      DstBlock		      "Terminator4"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      5
+	      ZOrder		      6
 	      SrcBlock		      "Servo HS2"
 	      SrcPort		      2
 	      Points		      [2, 0; 0, 10]
@@ -6292,14 +6351,14 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      6
+	      ZOrder		      7
 	      SrcBlock		      "engine input signal saturation"
 	      SrcPort		      1
 	      DstBlock		      "Rate Transition"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      7
+	      ZOrder		      8
 	      SrcBlock		      "Rate Transition"
 	      SrcPort		      1
 	      DstBlock		      "First order behaviour\nengine"
@@ -6307,7 +6366,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "<da_rad>"
-	      ZOrder		      8
+	      ZOrder		      9
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus Selector"
 	      SrcPort		      1
@@ -6316,7 +6375,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "da_rad"
-	      ZOrder		      9
+	      ZOrder		      10
 	      Labels		      [-1, 0]
 	      SrcBlock		      "Servo HS55"
 	      SrcPort		      1
@@ -6326,17 +6385,26 @@ Library {
 	    }
 	    Line {
 	      Name		      "de_rad"
-	      ZOrder		      10
+	      ZOrder		      11
 	      Labels		      [0, 0]
 	      SrcBlock		      "Servo HS1"
 	      SrcPort		      1
-	      Points		      [0, 10]
-	      DstBlock		      "Bus\nCreator1"
-	      DstPort		      2
+	      Points		      [0, 10; 63, 0]
+	      Branch {
+		ZOrder			12
+		DstBlock		"Bus\nCreator1"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			13
+		Points			[0, -205]
+		DstBlock		"Radians\nto Degrees"
+		DstPort			1
+	      }
 	    }
 	    Line {
 	      Name		      "dr_rad"
-	      ZOrder		      11
+	      ZOrder		      14
 	      Labels		      [2, 0]
 	      SrcBlock		      "Servo HS2"
 	      SrcPort		      1
@@ -6346,7 +6414,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "<de_rad>"
-	      ZOrder		      12
+	      ZOrder		      15
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus Selector"
 	      SrcPort		      2
@@ -6355,7 +6423,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "<dr_rad>"
-	      ZOrder		      13
+	      ZOrder		      16
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus Selector"
 	      SrcPort		      3
@@ -6364,7 +6432,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "<den_0to1>"
-	      ZOrder		      14
+	      ZOrder		      17
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus Selector"
 	      SrcPort		      4
@@ -6372,7 +6440,7 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      15
+	      ZOrder		      18
 	      SrcBlock		      "computed inputs"
 	      SrcPort		      1
 	      DstBlock		      "Bus Selector"
@@ -6380,7 +6448,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "CMD"
-	      ZOrder		      16
+	      ZOrder		      19
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nCreator1"
 	      SrcPort		      1
@@ -6389,7 +6457,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "<df_rad>"
-	      ZOrder		      17
+	      ZOrder		      20
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus Selector"
 	      SrcPort		      5
@@ -6398,7 +6466,7 @@ Library {
 	    }
 	    Line {
 	      Name		      "df_rad"
-	      ZOrder		      18
+	      ZOrder		      21
 	      Labels		      [-1, 0]
 	      SrcBlock		      "Servo HS3"
 	      SrcPort		      1
@@ -6428,7 +6496,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Nonlinear aircraft model"
-	    Location		    [-1538, 0, 3, 869]
+	    Location		    [-1344, 0, -672, 840]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6440,7 +6508,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "60"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "CMD"
@@ -7123,7 +7191,7 @@ Library {
 		  ZOrder		  2479
 		  ForegroundColor	  "red"
 		  BackgroundColor	  "yellow"
-		  LibraryVersion	  "1.1269"
+		  LibraryVersion	  "1.1274"
 		  SourceBlock		  "uavsimblockset/Publish state"
 		  SourceType		  ""
 		  ContentPreviewEnabled	  off
@@ -7339,7 +7407,7 @@ Library {
 	  Ports			  [4, 1]
 	  Position		  [255, 279, 520, 401]
 	  ZOrder		  2404
-	  LibraryVersion	  "1.922"
+	  LibraryVersion	  "1.933"
 	  SourceBlock		  "formationFlyingBlockset/Wake vortex effects"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -7365,6 +7433,29 @@ Library {
 	}
 	Line {
 	  ZOrder		  1
+	  SrcBlock		  "u - system inputs"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    ZOrder		    2
+	    DstBlock		    "Cularis actuators - time behaviour"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "Actuator dynamics\nneglected?"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Cularis actuators - time behaviour"
+	  SrcPort		  1
+	  DstBlock		  "Actuator dynamics\nneglected?"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
 	  SrcBlock		  "ID2"
 	  SrcPort		  1
 	  Points		  [41, 0; 0, -60]
@@ -7372,42 +7463,42 @@ Library {
 	  DstPort		  4
 	}
 	Line {
-	  ZOrder		  2
+	  ZOrder		  6
 	  SrcBlock		  "Publish state"
 	  SrcPort		  2
 	  DstBlock		  "Wake vortex effects"
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  3
+	  ZOrder		  7
 	  SrcBlock		  "Publish state"
 	  SrcPort		  1
 	  DstBlock		  "Wake vortex effects"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  4
+	  ZOrder		  8
 	  SrcBlock		  "Wake vortex effects"
 	  SrcPort		  1
 	  DstBlock		  "Nonlinear aircraft model"
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  5
+	  ZOrder		  9
 	  SrcBlock		  "Environment"
 	  SrcPort		  1
 	  DstBlock		  "Wake vortex effects"
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  6
+	  ZOrder		  10
 	  SrcBlock		  "Nonlinear aircraft model"
 	  SrcPort		  3
 	  DstBlock		  "Terminator1"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  7
+	  ZOrder		  11
 	  SrcBlock		  "Nonlinear aircraft model"
 	  SrcPort		  2
 	  Points		  [74, 0; 0, 248; -1095, 0; 0, -233]
@@ -7415,48 +7506,42 @@ Library {
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  8
-	  SrcBlock		  "u - system inputs"
-	  SrcPort		  1
-	  DstBlock		  "Cularis actuators - time behaviour"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  9
+	  ZOrder		  12
 	  SrcBlock		  "Nonlinear aircraft model"
 	  SrcPort		  1
 	  Points		  [98, 0]
 	  Branch {
-	    ZOrder		    10
+	    ZOrder		    13
 	    DstBlock		    "Airframe"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    11
+	    ZOrder		    14
 	    Points		    [0, 407; -1151, 0; 0, -317]
 	    DstBlock		    "Publish state"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  ZOrder		  12
-	  SrcBlock		  "Cularis actuators - time behaviour"
+	  ZOrder		  15
+	  SrcBlock		  "Actuator dynamics\nneglected?"
 	  SrcPort		  1
-	  Points		  [29, 0]
+	  Points		  [14, 0]
 	  Branch {
-	    ZOrder		    13
-	    Points		    [0, -110]
+	    ZOrder		    16
+	    Points		    [0, -70]
 	    DstBlock		    "u_eff"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    14
+	    ZOrder		    17
+	    Points		    [0, 40]
 	    DstBlock		    "Nonlinear aircraft model"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  ZOrder		  15
+	  ZOrder		  18
 	  SrcBlock		  "External forces \nand moments"
 	  SrcPort		  1
 	  DstBlock		  "Nonlinear aircraft model"
@@ -11020,7 +11105,7 @@ Library {
       ZOrder		      1222
       ForegroundColor	      "red"
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.1219"
+      LibraryVersion	      "1.1220"
       SourceBlock	      "uavsimBlockset_Environment_turbulentWind/Environment\nturbulent wind"
       SourceType	      ""
       ContentPreviewEnabled   off
@@ -11120,9 +11205,10 @@ Library {
       SID		      "5185"
       Ports		      [6]
       Position		      [1025, -172, 1200, 122]
-      ZOrder		      2478
+      ZOrder		      2479
       ForegroundColor	      "red"
       BackgroundColor	      "yellow"
+      LibraryVersion	      "*1.1270"
       RequestExecContextInheritance off
       Variant		      off
       Object {
@@ -11141,7 +11227,7 @@ Library {
       }
       System {
 	Name			"Publish state"
-	Location		[-1536, 0, 4, 868]
+	Location		[0, 0, 1344, 932]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11153,7 +11239,7 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "p_NED"
@@ -11214,7 +11300,7 @@ Library {
 	  Ports			  [0, 1]
 	  Position		  [280, 1064, 440, 1156]
 	  ZOrder		  2485
-	  LibraryVersion	  "1.922"
+	  LibraryVersion	  "1.932"
 	  SourceBlock		  "formationFlyingBlockset/Cularis vortex geometry parameters"
 	  SourceType		  ""
 	  ContentPreviewEnabled	  off
@@ -11256,7 +11342,7 @@ Library {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "195"
+	    SIDHighWatermark	    "223"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "pNED"
@@ -11331,20 +11417,20 @@ Library {
 	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
-	      SID		      "5195::183"
+	      SID		      "5195::211"
 	      Ports		      [1, 1]
 	      Position		      [270, 100, 320, 140]
-	      ZOrder		      113
+	      ZOrder		      119
 	      Outputs		      "1"
 	    }
 	    Block {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
-	      SID		      "5195::182"
-	      Tag		      "Stateflow S-Function uavsimblockset 3"
+	      SID		      "5195::210"
+	      Tag		      "Stateflow S-Function uavsimblockset 1"
 	      Ports		      [8, 1]
 	      Position		      [180, 100, 230, 280]
-	      ZOrder		      112
+	      ZOrder		      118
 	      FunctionName	      "sf_sfun"
 	      PortCounts	      "[8 1]"
 	      SFunctionDeploymentMode off
@@ -11353,78 +11439,78 @@ Library {
 	    Block {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
-	      SID		      "5195::184"
+	      SID		      "5195::212"
 	      Position		      [460, 111, 480, 129]
-	      ZOrder		      114
+	      ZOrder		      120
 	    }
 	    Line {
-	      ZOrder		      1
-	      SrcBlock		      " SFunction "
+	      ZOrder		      11
+	      SrcBlock		      "pNED"
 	      SrcPort		      1
-	      DstBlock		      " Demux "
+	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      2
-	      SrcBlock		      " Demux "
-	      SrcPort		      1
-	      DstBlock		      " Terminator "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "tsim"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      8
-	    }
-	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "p"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      7
-	    }
-	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "beta"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      6
-	    }
-	    Line {
-	      ZOrder		      6
-	      SrcBlock		      "alpha"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      5
-	    }
-	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "qAttitude"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      4
-	    }
-	    Line {
-	      ZOrder		      8
-	      SrcBlock		      "CL"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      9
+	      ZOrder		      12
 	      SrcBlock		      "vNED"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      10
-	      SrcBlock		      "pNED"
+	      ZOrder		      13
+	      SrcBlock		      "CL"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      14
+	      SrcBlock		      "qAttitude"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      ZOrder		      15
+	      SrcBlock		      "alpha"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      5
+	    }
+	    Line {
+	      ZOrder		      16
+	      SrcBlock		      "beta"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      6
+	    }
+	    Line {
+	      ZOrder		      17
+	      SrcBlock		      "p"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      7
+	    }
+	    Line {
+	      ZOrder		      18
+	      SrcBlock		      "tsim"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      8
+	    }
+	    Line {
+	      ZOrder		      19
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      20
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
 	      DstPort		      1
 	    }
 	  }
@@ -11578,7 +11664,7 @@ Library {
       ZOrder		      1933
       ForegroundColor	      "red"
       BackgroundColor	      "yellow"
-      LibraryVersion	      "1.1173"
+      LibraryVersion	      "1.1175"
       SourceBlock	      "uavsimBlockset_Cularis_withUAV3D/UAV A"
       SourceType	      ""
       ContentPreviewEnabled   off
@@ -11595,6 +11681,271 @@ Library {
       leaderID		      "0"
       aircraftmask_displayUAV3D	on
       aircraftmask_displayVortices off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "UAV3D"
+      SID		      "5231"
+      Ports		      [5]
+      Position		      [1545, 239, 1660, 351]
+      ZOrder		      2480
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"UAV3D"
+	Location		[-3, -3, 1539, 937]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	Block {
+	  BlockType		  Inport
+	  Name			  "ID"
+	  SID			  "5235"
+	  Position		  [170, 23, 200, 37]
+	  ZOrder		  1197
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "pNED"
+	  SID			  "5236"
+	  Position		  [170, 143, 200, 157]
+	  ZOrder		  1198
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "q_be"
+	  SID			  "5237"
+	  Position		  [130, 393, 160, 407]
+	  ZOrder		  1199
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "delta_i"
+	  SID			  "5238"
+	  Position		  [130, 443, 160, 457]
+	  ZOrder		  1200
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "visual"
+	  SID			  "5239"
+	  Position		  [170, 643, 200, 657]
+	  ZOrder		  1201
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  SID			  "5243"
+	  Position		  [325, -35, 355, -5]
+	  ZOrder		  1205
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "5240"
+	  Ports			  [1, 5]
+	  Position		  [215, 493, 235, 637]
+	  ZOrder		  1202
+	  ShowName		  off
+	  Outputs		  "5"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux1"
+	  SID			  "5241"
+	  Ports			  [1, 4]
+	  Position		  [215, 230, 235, 375]
+	  ZOrder		  1203
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux2"
+	  SID			  "5242"
+	  Ports			  [1, 3]
+	  Position		  [225, 82, 245, 228]
+	  ZOrder		  1204
+	  ShowName		  off
+	  Outputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "UAV3D interface"
+	  SID			  "5234"
+	  Ports			  [14, 0, 1]
+	  Position		  [325, 54, 460, 671]
+	  ZOrder		  1196
+	  LibraryVersion	  "1.1150"
+	  SourceBlock		  "uavsimBlockset_UAV3DInterface/UAV3D interface"
+	  SourceType		  ""
+	  ContentPreviewEnabled	  off
+	  ip			  "'localhost'"
+	  udpport		  "4445"
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "visual"
+	  SrcPort		  1
+	  Points		  [25, 0; 0, 5]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  14
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "delta_i"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 115]
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  Points		  [8, 0; 0, -15]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  13
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  Points		  [8, 0; 0, -42; 62, 0]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  12
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [39, 0; 0, -45]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  11
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [4, 0; 0, -60]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  10
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [9, 0; 0, -75]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  9
+	}
+	Line {
+	  ZOrder		  15
+	  SrcBlock		  "Demux1"
+	  SrcPort		  1
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  16
+	  SrcBlock		  "Demux1"
+	  SrcPort		  2
+	  Points		  [9, 0; 0, 10]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  6
+	}
+	Line {
+	  ZOrder		  17
+	  SrcBlock		  "Demux1"
+	  SrcPort		  3
+	  Points		  [9, 0; 0, 20]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  7
+	}
+	Line {
+	  ZOrder		  18
+	  SrcBlock		  "Demux1"
+	  SrcPort		  4
+	  Points		  [9, 0; 0, 30]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  8
+	}
+	Line {
+	  ZOrder		  19
+	  SrcBlock		  "q_be"
+	  SrcPort		  1
+	  Points		  [23, 0; 0, -95]
+	  DstBlock		  "Demux1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  21
+	  SrcBlock		  "Demux2"
+	  SrcPort		  3
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  22
+	  SrcBlock		  "Demux2"
+	  SrcPort		  2
+	  Points		  [30, 0; 0, 5]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  23
+	  SrcBlock		  "Demux2"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 10]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  24
+	  SrcBlock		  "pNED"
+	  SrcPort		  1
+	  Points		  [3, 0; 0, 5]
+	  DstBlock		  "Demux2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  25
+	  SrcBlock		  "ID"
+	  SrcPort		  1
+	  Points		  [58, 0; 0, 40]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  26
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  DstBlock		  "UAV3D interface"
+	  DstPort		  enable
+	}
+      }
     }
     Block {
       BlockType		      Reference
@@ -11616,7 +11967,7 @@ Library {
       Ports		      [14, 0, 1]
       Position		      [1355, 127, 1460, 488]
       ZOrder		      1195
-      LibraryVersion	      "1.1149"
+      LibraryVersion	      "1.1150"
       SourceBlock	      "uavsimBlockset_UAV3DInterface/UAV3D interface"
       SourceType	      ""
       ContentPreviewEnabled   off
@@ -11630,7 +11981,7 @@ Library {
       Ports		      [4]
       Position		      [1350, 532, 1460, 648]
       ZOrder		      1951
-      LibraryVersion	      "1.1148"
+      LibraryVersion	      "1.1149"
       SourceBlock	      "uavsimBlockset_UAV3D_visualizeBox/Visualize box in UAV3D"
       SourceType	      "SubSystem"
       ContentPreviewEnabled   off
@@ -11758,23 +12109,23 @@ Stateflow {
   }
   chart {
     id			    2
-    name		    "Closed loop Cularis UAS 1/Controllers/Subsystem/Compute differential \npositions and velocities"
+    name		    "Publish state/MATLAB Function1"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
-    firstTransition	    8
-    firstJunction	    7
+    firstTransition	    14
+    firstJunction	    13
     viewObj		    2
     machine		    1
-    ssIdHighWaterMark	    7
+    ssIdHighWaterMark	    25
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     firstData		    4
-    chartFileNumber	    2
+    chartFileNumber	    1
     disableImplicitCasting  1
     eml {
-      name		      "fcn"
+      name		      "publishState"
     }
   }
   state {
@@ -11791,40 +12142,47 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function dx = fcn(closedloopmask_ID)\n%#codegen\nglobal VortexSig;\n\ndx = struct('dp_NED_m', zer"
-      "os(10,3), 'dv_NED_mps', zeros(10,3));\n\nfor k=1:10\n   dx.dp_NED_m(k, :) = VortexSig(k).p_NED_m - VortexSig(clo"
-      "sedloopmask_ID).p_NED_m;\n   dx.dv_NED_mps(k, :) = VortexSig(k).v_NED_mps - VortexSig(closedloopmask_ID).v_NED_m"
-      "ps;\nend\n\nend"
+      script		      "% This function writes the calling aircraft's relevant states into a global\n% Simulink variable "
+      "to enable Simulation of relative localization sensors,\n% aerodynamic coupling etc.\nfunction publishState(pNED,"
+      " ...\n    vNED, ...\n    CL, ...\n    qAttitude, ...\n    alpha, ...\n    beta, ...\n    p, ...\n    tsim)\n%#co"
+      "degen\nglobal VortexSig;\n\nID = p.id;\nVortexSig(ID).timeOfLastUpdate = tsim;\nVortexSig(ID).p_NED_m = pNED;\nV"
+      "ortexSig(ID).v_NED_mps = vNED;\nVortexSig(ID).CL = CL;\nVortexSig(ID).qAttitude = qAttitude;\nVortexSig(ID).alph"
+      "a_rad = alpha;\nVortexSig(ID).beta_rad = beta;\nVortexSig(ID).b_m = p.b_m;\n\nVortexSig(ID).cbar_m = p.cbar_m;\n"
+      "VortexSig(ID).sweep_rad = p.sweep_rad;\nVortexSig(ID).dihedral_rad = p.dihedral_rad;\nVortexSig(ID).longiRefLeng"
+      "th_m = p.longiRefLength_m;\nVortexSig(ID).pNose_b_m = p.pNose_b_m;\nVortexSig(ID).pRear_b_m = [-1/4 0 0]';\nVort"
+      "exSig(ID).posFuselageBottom_b_m = [0 0 0.12/2]';\nVortexSig(ID).verticalRefLength_m = p.verticalRefLength_m;\nVo"
+      "rtexSig(ID).posFinTip_b_m = p.posFinTip_b_m;\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    4
-    ssIdNumber		    5
-    name		    "dx"
+    ssIdNumber		    9
+    name		    "pNED"
     linkNode		    [2 0 5]
-    scope		    OUTPUT_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
 	size			"-1"
       }
       type {
-	method			SF_SIMULINK_OBJECT_TYPE
+	method			SF_INHERITED_TYPE
 	primitive		SF_DOUBLE_TYPE
-	busObject		"Dx"
+	isSigned		1
+	wordLength		"16"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
+      frame		      SF_FRAME_INHERITED
     }
-    dataType		    "Bus: Dx"
+    dataType		    "Inherit: Same as Simulink"
   }
   data {
     id			    5
-    ssIdNumber		    6
-    name		    "closedloopmask_ID"
+    ssIdNumber		    10
+    name		    "vNED"
     linkNode		    [2 4 6]
-    scope		    PARAMETER_DATA
+    scope		    INPUT_DATA
     machine		    1
     props {
       array {
@@ -11843,9 +12201,141 @@ Stateflow {
   }
   data {
     id			    6
-    ssIdNumber		    7
+    ssIdNumber		    11
+    name		    "CL"
+    linkNode		    [2 5 7]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    7
+    ssIdNumber		    12
+    name		    "qAttitude"
+    linkNode		    [2 6 8]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    8
+    ssIdNumber		    13
+    name		    "alpha"
+    linkNode		    [2 7 9]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    9
+    ssIdNumber		    14
+    name		    "beta"
+    linkNode		    [2 8 10]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    10
+    ssIdNumber		    15
+    name		    "p"
+    linkNode		    [2 9 11]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    11
+    ssIdNumber		    16
+    name		    "tsim"
+    linkNode		    [2 10 12]
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+    }
+    dataType		    "Inherit: Same as Simulink"
+  }
+  data {
+    id			    12
+    ssIdNumber		    25
     name		    "VortexSig"
-    linkNode		    [2 5 0]
+    linkNode		    [2 11 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -11864,7 +12354,7 @@ Stateflow {
     dataType		    "Inherit: Same as Simulink"
   }
   junction {
-    id			    7
+    id			    13
     position		    [23.5747 49.5747 7]
     chart		    2
     linkNode		    [2 0 0]
@@ -11873,7 +12363,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    8
+    id			    14
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -11881,7 +12371,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      7
+      id		      13
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -11897,218 +12387,80 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    9
-    name		    "Closed loop Cularis UAS 1/Controllers/Subsystem/Compute differential \npositions and velocities"
+    id			    15
+    name		    "Publish state/MATLAB Function1"
     machine		    1
     chart		    2
   }
   chart {
-    id			    10
-    name		    "Publish state/MATLAB Function1"
+    id			    16
+    name		    "Closed loop Cularis UAS 1/Controllers/Subsystem/Compute differential \npositions and velocities"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 11 0 0]
+    treeNode		    [0 17 0 0]
     firstTransition	    22
     firstJunction	    21
-    viewObj		    10
+    viewObj		    16
     machine		    1
-    ssIdHighWaterMark	    25
+    ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    firstData		    12
-    chartFileNumber	    3
+    firstData		    18
+    chartFileNumber	    2
     disableImplicitCasting  1
     eml {
-      name		      "publishState"
+      name		      "fcn"
     }
   }
   state {
-    id			    11
+    id			    17
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    10
-    treeNode		    [10 0 0 0]
+    chart		    16
+    treeNode		    [16 0 0 0]
     superState		    SUBCHART
-    subviewer		    10
+    subviewer		    16
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "% This function writes the calling aircraft's relevant states into a global\n% Simulink variable "
-      "to enable Simulation of relative localization sensors,\n% aerodynmaic coupling etc.\nfunction publishState(pNED,"
-      " ...\n    vNED, ...\n    CL, ...\n    qAttitude, ...\n    alpha, ...\n    beta, ...\n    p, ...\n    tsim)\n%#co"
-      "degen\nglobal VortexSig;\n\nID = p.id;\nVortexSig(ID).timeOfLastUpdate = tsim;\nVortexSig(ID).p_NED_m = pNED;\nV"
-      "ortexSig(ID).v_NED_mps = vNED;\nVortexSig(ID).CL = CL;\nVortexSig(ID).qAttitude = qAttitude;\nVortexSig(ID).alph"
-      "a_rad = alpha;\nVortexSig(ID).beta_rad = beta;\nVortexSig(ID).b_m = p.b_m;\n\nVortexSig(ID).cbar_m = p.cbar_m;\n"
-      "VortexSig(ID).sweep_rad = p.sweep_rad;\nVortexSig(ID).dihedral_rad = p.dihedral_rad;\nVortexSig(ID).longiRefLeng"
-      "th_m = p.longiRefLength_m;\nVortexSig(ID).pNose_b_m = p.pNose_b_m;\nVortexSig(ID).verticalRefLength_m = p.vertic"
-      "alRefLength_m;\nVortexSig(ID).posFinTip_b_m = p.posFinTip_b_m;\n\nend"
+      script		      "function dx = fcn(closedloopmask_ID)\n%#codegen\nglobal VortexSig;\n\ndx = struct('dp_NED_m', zer"
+      "os(10,3), 'dv_NED_mps', zeros(10,3));\n\nfor k=1:10\n   dx.dp_NED_m(k, :) = VortexSig(k).p_NED_m - VortexSig(clo"
+      "sedloopmask_ID).p_NED_m;\n   dx.dv_NED_mps(k, :) = VortexSig(k).v_NED_mps - VortexSig(closedloopmask_ID).v_NED_m"
+      "ps;\nend\n\nend"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
-    id			    12
-    ssIdNumber		    9
-    name		    "pNED"
-    linkNode		    [10 0 13]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    13
-    ssIdNumber		    10
-    name		    "vNED"
-    linkNode		    [10 12 14]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    14
-    ssIdNumber		    11
-    name		    "CL"
-    linkNode		    [10 13 15]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    15
-    ssIdNumber		    12
-    name		    "qAttitude"
-    linkNode		    [10 14 16]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    16
-    ssIdNumber		    13
-    name		    "alpha"
-    linkNode		    [10 15 17]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    17
-    ssIdNumber		    14
-    name		    "beta"
-    linkNode		    [10 16 18]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
     id			    18
-    ssIdNumber		    15
-    name		    "p"
-    linkNode		    [10 17 19]
-    scope		    INPUT_DATA
+    ssIdNumber		    5
+    name		    "dx"
+    linkNode		    [16 0 19]
+    scope		    OUTPUT_DATA
     machine		    1
     props {
       array {
 	size			"-1"
       }
       type {
-	method			SF_INHERITED_TYPE
+	method			SF_SIMULINK_OBJECT_TYPE
 	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
+	busObject		"Dx"
       }
       complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_INHERITED
+      frame		      SF_FRAME_NO
     }
-    dataType		    "Inherit: Same as Simulink"
+    dataType		    "Bus: Dx"
   }
   data {
     id			    19
-    ssIdNumber		    16
-    name		    "tsim"
-    linkNode		    [10 18 20]
-    scope		    INPUT_DATA
+    ssIdNumber		    6
+    name		    "closedloopmask_ID"
+    linkNode		    [16 18 20]
+    scope		    PARAMETER_DATA
     machine		    1
     props {
       array {
@@ -12127,9 +12479,9 @@ Stateflow {
   }
   data {
     id			    20
-    ssIdNumber		    25
+    ssIdNumber		    7
     name		    "VortexSig"
-    linkNode		    [10 19 0]
+    linkNode		    [16 19 0]
     scope		    DATA_STORE_MEMORY_DATA
     machine		    1
     props {
@@ -12150,9 +12502,9 @@ Stateflow {
   junction {
     id			    21
     position		    [23.5747 49.5747 7]
-    chart		    10
-    linkNode		    [10 0 0]
-    subviewer		    10
+    chart		    16
+    linkNode		    [16 0 0]
+    subviewer		    16
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
   }
@@ -12169,10 +12521,10 @@ Stateflow {
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    10
-    linkNode		    [10 0 0]
+    chart		    16
+    linkNode		    [16 0 0]
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    10
+    subviewer		    16
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
@@ -12182,9 +12534,9 @@ Stateflow {
   }
   instance {
     id			    23
-    name		    "Publish state/MATLAB Function1"
+    name		    "Closed loop Cularis UAS 1/Controllers/Subsystem/Compute differential \npositions and velocities"
     machine		    1
-    chart		    10
+    chart		    16
   }
   chart {
     id			    24
