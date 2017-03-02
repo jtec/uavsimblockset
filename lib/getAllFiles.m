@@ -1,6 +1,6 @@
 % Recursively gets all files and directories below a directory, filters for file
 % extensions.
-function [files subDirs ]= getAllFiles(dirName, ext)
+function [files, subDirs ]= getAllFiles(dirName, ext)
 
 dirData = dir(dirName);      %# Get the data for the current directory
 dirIndex = [dirData.isdir];  %# Find the index for directories

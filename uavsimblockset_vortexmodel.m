@@ -4,7 +4,6 @@ function [Vi_bfrozen, omegai_bfrozen, Vi_NED, p0_filament_left, p0_filament_righ
     ID, ...
     tsim, ...
     VortexSig)
-
 debugport = zeros(10,1);
 stack.vi_center_NED = [0 0 0]';
 stack.vi_eff_b = [0 0 0]';
@@ -22,7 +21,7 @@ stack.rightwingvector = zeros(3,1);
 
 %test = linspace(2,3,randi(100));
 
-% Inialize shared values structure:
+% Inialize shared values structure to fix sizes for code generation:
 stack.DCM_bw_leader = eye(3);
 stack.DCM_eb_leader = eye(3);
 stack.DCM_ew_leader = eye(3);
@@ -55,19 +54,20 @@ if n_relevantUAS > 0
     relevantUAS = relevantUAS(1:n_relevantUAS);
     for j=1:length(relevantUAS)
         % UAS inducing flow:
-        maximoleader = VortexSig(relevantUAS(j));
-        if ~isempty(maximoleader)
+        inducer = VortexSig(relevantUAS(j));
+        if ~isempty(inducer)
             % Computation fails for two vehicles that are exactly in the same
             % place, as might be case at the very beginning of a simulation:
             % if norm(maximoleader.p_NED_m - VortexSig(ID).p_NED_m) > 1e-3
             % FIXME: Not reliable, just wait a little as workaround:
-            if tsim > 0.1;
+            if tsim > 0.1
+                ID
                 % Compute rotation matrix from the leader's wind frame to the
                 % follower's body frame:
                 % DCM (wind leader) -> (body leader)
-                stack.DCM_bw_leader = ffb_dcmbody2wind(maximoleader.alpha_rad, maximoleader.beta_rad)';
+                stack.DCM_bw_leader = ffb_dcmbody2wind(inducer.alpha_rad, inducer.beta_rad)';
                 % DCM (body leader) -> NED
-                stack.DCM_eb_leader = ffb_quat2dcm(maximoleader.qAttitude')';
+                stack.DCM_eb_leader = ffb_quat2dcm(inducer.qAttitude')';
                 % DCM (wind leader) -> NED
                 stack.DCM_ew_leader = stack.DCM_eb_leader * stack.DCM_bw_leader;
                 % DCM NED -> (body follower)
@@ -76,37 +76,37 @@ if n_relevantUAS > 0
                 % Compute source points of vortex filaments:
                 % unit vector that points from the wind frame's origin to the right
                 % wing tip:
-                stack.p0_rightFilament_bleader = getWingPoint(maximoleader,  0.5 * maximoleader.b_m * pi/4, 1);
+                stack.p0_rightFilament_bleader = getWingPoint(inducer,  0.5 * inducer.b_m * pi/4, 1);
                 stack.p0_rightFilament_wleader = stack.DCM_bw_leader' * stack.p0_rightFilament_bleader;
                 % The same procedure for the left wing:
-                stack.p0_leftFilament_bleader = getWingPoint(maximoleader,  0.5 * maximoleader.b_m * pi/4, -1);
+                stack.p0_leftFilament_bleader = getWingPoint(inducer,  0.5 * inducer.b_m * pi/4, -1);
                 stack.p0_leftFilament_wleader = stack.DCM_bw_leader' * stack.p0_leftFilament_bleader;
                 
                 % Compute bounding points:
-                if ~isfield(VortexSig(ID), 'checkpoints')
+              %  if ~isfield(VortexSig(ID), 'checkpoints')
                     stack.rightwingvector = ffb_angle2dcm(this.sweep_rad, this.dihedral_rad, 0)' * [0 1 0]';
                     stack.winglength = this.b_m/stack.rightwingvector(2);
                     stack.checkpoints.center = [0 0 0]';
                     stack.checkpoints.nose = VortexSig(ID).pNose_b_m;
                     stack.checkpoints.rear = VortexSig(ID).pRear_b_m;
-                    stack.checkpoints.leftwingtip = getWingPoint(VortexSig(ID),  0.5 * maximoleader.b_m, -1);
-                    stack.checkpoints.rightwingtip = getWingPoint(VortexSig(ID),  0.5 * maximoleader.b_m, 1);
+                    stack.checkpoints.leftwingtip = getWingPoint(VortexSig(ID),  0.5 * inducer.b_m, -1);
+                    stack.checkpoints.rightwingtip = getWingPoint(VortexSig(ID),  0.5 * inducer.b_m, 1);
                     stack.checkpoints.fintip = VortexSig(ID).posFinTip_b_m;
                     stack.checkpoints.finbottom = VortexSig(ID).posFuselageBottom_b_m;
                     % Compute unit vectors pointing along the wing:
                     stack.leftwingvector = fflib_normalize(stack.checkpoints.leftwingtip);
                     stack.rightwingvector = fflib_normalize(stack.checkpoints.rightwingtip);
-                    VortexSig(ID).checkpoints = stack.checkpoints;
-                end
+                    %VortexSig(ID).checkpoints = stack.checkpoints;
+                %end
                 [test, stack.vi_center_NED]= getVi(stack.checkpoints.center, ...
-                    VortexSig(ID), maximoleader, ...
+                    VortexSig(ID), inducer, ...
                     stack);
                 
-                debugos = true;
+                debugos = false;
                 if debugos
-                    computeDistributions(ID, VortexSig, stack, maximoleader);
+                    computeDistributions(ID, VortexSig, stack, inducer);
                 end
-                [stack] = computeEffectiveVAndOmega(VortexSig, ID, maximoleader, stack);
+                [stack] = computeEffectiveVAndOmega(VortexSig, ID, inducer, stack);
             end
         end
     end
@@ -129,6 +129,7 @@ dcm_ew = stack.DCM_ew_this;
 if tsim > 1 && ID == 3
     bp = 0;
 end
+
 end
 
 % Computes the average induced velocity and índuced body rotation rates:
@@ -154,10 +155,10 @@ for k=1:stack_out.n_averagesamples
     fz2x =  fxz;
     fy2x =  fxz;
 end
-Wx1y = (b/2)*weightedaverage([0 -b/2 0]', [0 0 0]', VortexSig, ID, maximoleader, stack_in,  fxy ,1);
-Wx2y = (b/2)*weightedaverage([0 0 0]', [0 b/2 0]', VortexSig, ID, maximoleader, stack_in,  fxy, 1);
-Wx1z = (Df/2)*weightedaverage([0 0 -Df/2]', [0 0 0]', VortexSig, ID, maximoleader, stack_in,  fxz, 1);
-Wx2z = (Df/2)*weightedaverage([0 0 0]', [0 0 Df/2]', VortexSig, ID, maximoleader, stack_in,  fxz, 1);
+Wx1y = (2/b)*weightedaverage([0 -b/2 0]', [0 0 0]', VortexSig, ID, maximoleader, stack_in,  fxy ,1);
+Wx2y = (2/b)*weightedaverage([0 0 0]', [0 b/2 0]', VortexSig, ID, maximoleader, stack_in,  fxy, 1);
+Wx1z = (2/Df)*weightedaverage([0 0 -Df/2]', [0 0 0]', VortexSig, ID, maximoleader, stack_in,  fxz, 1);
+Wx2z = (2/Df)*weightedaverage([0 0 0]', [0 0 Df/2]', VortexSig, ID, maximoleader, stack_in,  fxz, 1);
 % Ok, this is too fucked up, dropping this shit. Comparison can be done
 % anyway.
 
@@ -171,7 +172,13 @@ Vi_averaged = 1/4 * (vi_center2nose ...
     + vi_center2rear ...
     + vi_center2fintip ...
     + vi_center2finbottom);
-
+% Compute W_x_eff
+Wx1y = (2/b)*vi_center2leftwingtip(1);
+Wx2y = (2/b)*vi_center2rightwingtip(1);
+Wx1z = (2/Df)*vi_center2fintip(1);
+Wx2z = (2/Df)*vi_center2finbottom(1);
+Wx_eff = mean([Wx1y Wx2y Wx1z Wx2z]);
+Vi_averaged(1) = Wx_eff;
 % Least squares approach: fit angular rates and average induced velocity to
 % pointwise induced velocity vectors
 vi_alongBodyX = distribution(VortexSig(ID), [0 0 0]', [1 0 0]', [-Lf/2, Lf/2], stack_in, maximoleader);
@@ -186,7 +193,7 @@ Vi_lsq = (A'*A)^-1*A'*y;
 % Now angular rates:
 % The A matrix now indicates how angular rates generate induced velocities:
 ps = data(5:7, :);
-for k=1:size(ps, 2);
+for k=1:size(ps, 2)
     p = ps(:, k);
     rw = 1+(k-1)*3;
     A(rw:rw+2, :) = [0 -p(3) p(2); 
@@ -196,10 +203,9 @@ end
 omegai_lsq = (A'*A)^-1*A'*y;
 
 %stack_out.vi_eff_b = Vi_averaged;
-stack_out.vi_eff_b = Vi_lsq;
-stack_out.omegai_eff_b = omegai_lsq;
+stack_out.vi_eff_b = Vi_averaged;
+stack_out.omegai_eff_b = 4*omegai_lsq;
 end
-
 
 % Computes the induced velocity distribution over one airframe
 % segment defined by a point in the body frame, a unit vector and
@@ -230,7 +236,7 @@ for k=2:div
 end
 unit_p1top2 = fflib_normalize(p2-p1);
 vi_av = zeros(3,1);
-for i=1:length(steps);
+for i=1:length(steps)
     p = p1 + steps(i) * unit_p1top2;
     [vi_atPoint_b, ~] = getVi(p, VortexSig(ID), maximoleader, stack);
     vi_av = vi_av + vi_atPoint_b*(1+steps(i)*f(i));
@@ -251,12 +257,12 @@ for k=2:div
 end
 unit_p1top2 = fflib_normalize(p2-p1);
 vi_av = zeros(3,1);
-for i=1:length(steps);
+dl = l/length(steps);
+for i=1:length(steps)
     p = p1 + steps(i) * unit_p1top2;
     [vi_atPoint_b, ~] = getVi(p, VortexSig(ID), maximoleader, stack);
-    vi_av = vi_av + vi_atPoint_b;
+    vi_av = vi_av + vi_atPoint_b*dl;
 end
-vi_av = vi_av ./ length(steps);
 end
 
 % Computes the induced velocity distribution at discrete points:
@@ -365,7 +371,11 @@ dx = abs(p_wleader(1));
 tau = norm(dx / norm(leader.v_NED_mps));
 % Disable core:
 % tau = 1e-6;
-vortexStrength = 0.5 * leader.CL * norm(leader.v_NED_mps) * leader.cbar_m;
+CL = leader.CL;
+if CL<0
+    CL=0;
+end
+vortexStrength = 0.5 * CL * norm(leader.v_NED_mps) * leader.cbar_m;
 empiricalNu = 0.06*vortexStrength;
 rc = 2.24 * sqrt(empiricalNu * tau);
 % Compute the radial distance between the filament and the
@@ -403,8 +413,7 @@ for k=1:length(VortexSig)
             n = n + 1;
             indices(n) = k;
         end
-    end
-    
+    end 
 end
 if n < 1 && ID == 3
     bp = 0;

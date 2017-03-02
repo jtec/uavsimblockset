@@ -1,4 +1,4 @@
-% Returns the transfer function of a second order low pass filter.
+% Returns the state-space model of a second order low pass filter.
 %
 % \author Jan Bolting, ONERA/ISAE, 2014, j.bolting@isae.fr
 %

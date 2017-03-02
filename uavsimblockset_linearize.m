@@ -81,6 +81,6 @@ linearModel.c = fflib_removeSmallElements(linearModel.c, 1e-6);
 linearModel.d = fflib_removeSmallElements(linearModel.d, 1e-6);
 
 save_system(trimModel);
-close_system(trimModel);
+%close_system(trimModel);
 display([mfilename '>> Extracted linear models from ' trimModel]);
 end

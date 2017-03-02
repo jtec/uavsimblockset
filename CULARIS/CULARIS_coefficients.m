@@ -37,7 +37,7 @@ uavsim.cularis.CL_q = 10.60;
 uavsim.cularis.CD_0 = 0.0254;
 % Pitch control (elevator) derivative
 uavsim.cularis.CD_de = 0.0;
-% Drag due to pithc
+% Drag due to pitch rate
 uavsim.cularis.CD_q = 0.0;
 
 %%% Side force coefficient %%%
@@ -47,7 +47,7 @@ uavsim.cularis.CY_beta = -0.24;
 uavsim.cularis.CY_p = 0.01;
 % Yaw derivative
 uavsim.cularis.CY_r = 0.14;
-% Aileron deflefction derivative
+% Aileron deflection derivative
 uavsim.cularis.CY_da = -0.01;
 % zero value:
 uavsim.cularis.CY_0 = 0;
@@ -92,6 +92,12 @@ uavsim.cularis.Cn_p = -0.06;
 uavsim.cularis.Cn_r = -0.04;
 % Rudder deflection derivative
 uavsim.cularis.Cn_dr = 0.05;
+
+% Direct force surface coefficients, not based on AVL, but only needed for
+% NDI demonstration:
+uavsim.cularis.CL_df = 2*uavsim.cularis.CL_de;
+uavsim.cularis.CY_ds = uavsim.cularis.CL_df/2;
+uavsim.cularis.CD_dd = uavsim.cularis.CY_beta;
 
 % Engine parameters:
 uavsim.cularis.C_prop = 1;
